@@ -17,9 +17,16 @@ DROP TABLE opilane;
 
 --andmete lisamine tabelise opilane
 INSERT INTO opilane(eesnimi, perenimi,synniaeg,kas_opib)
-VALUES ('Konstantyn','Fuksov','2009-12-02',1),
-('Kostya','Aljosha','2009-12-02',0);
-Select * from opilane;
+VALUES ('Oleg','Berejevski','2009-12-02',1),
+('Konstantin','Gaponenko','2009-12-02',0);
+SELECT * FROM opilane;
 
 --muudame tabeli ja lisame piirangu
 ALTER TABLE opilane Alter column perenimi varchar(30) UNIQUE;
+
+--ühe kirhe kustutamine
+DELETE FROM opilane WHERE opilaneID=5
+
+--kirje uuendamine
+UPDATE opilane SET kas_opib=0
+WHERE opilaneID=3
