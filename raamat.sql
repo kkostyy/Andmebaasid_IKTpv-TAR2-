@@ -52,23 +52,18 @@ Select * from raamat
 
 --trykitudRaamat tabeli loomine
 CREATE TABLE trykitudRaamat(
-trRaamatID int PRIMARY KEY identity(1,1),
-nimetus varchar(50) UNIQUE,
-
-raamatID int,
-FOREIGN KEY (raamatID) REFERENCES raamat(raamatID),
-
+    trRaamatID int IDENTITY(1,1) PRIMARY KEY,
+    trykikodaID int,
+    raamatID int,
+    FOREIGN KEY (trykikodaID) REFERENCES trykikoda(trykikodaID),
+    FOREIGN KEY (raamatID) REFERENCES raamat(raamatID)
 );
+
 Select * from trykitudRaamat
 
 --trykikoda tabeli loomine
 CREATE TABLE trykikoda(
-trykikodaID int PRIMARY KEY identity(1,1),
-nimetus varchar(30) UNIQUE,
-aadress varchar(30),
-trykikodaID int,
-FOREIGN KEY (trykikodaID) REFERENCES trykitudRaamat(trykikodaID)
+    trykikodaID int IDENTITY(1,1) PRIMARY KEY,
+    nimetus varchar(30) UNIQUE,
+    aadress varchar(30)
 );
-
-
-DROP TABLE trykitudRaamat;
