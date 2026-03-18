@@ -112,3 +112,26 @@ DROP VIEW autorUudisAjalehes;
 UPDATE uudised SET kuupaev = '2026-03-18';
 SELECT * FROM uudised;
 --viewUudisAjakirjanikud.sql
+
+-- Vaade: uudised konkreetsel kuupaeval
+CREATE VIEW uudisedKuupaeval AS
+SELECT u.uudisPealkiri, u.kuupaev, a.nimi AS autor
+FROM uudised AS u
+INNER JOIN ajakirjanik AS a ON u.ajakirjanikID = a.ajakirjanikID
+WHERE u.kuupaev = '2025-03-12';
+
+-- oma1: ajakirjaniku vaade - naitab ajakirjaniku nime ja tema uudised
+CREATE VIEW ajakirjanikuVaade AS
+SELECT a.nimi AS autor, u.uudisPealkiri
+FROM ajakirjanik AS a
+INNER JOIN uudised AS u ON a.ajakirjanikID = u.ajakirjanikID;
+
+SELECT * FROM ajakirjanikuVaade;
+
+-- oma2: ajakirjaniku vaade - naitab ajakirjaniku nime ja uudise kuupaev
+CREATE VIEW ajakirjanikuKuupaev AS
+SELECT a.nimi AS autor, u.kuupaev
+FROM ajakirjanik AS a
+INNER JOIN uudised AS u ON a.ajakirjanikID = u.ajakirjanikID;
+
+SELECT * FROM ajakirjanikuKuupaev;
