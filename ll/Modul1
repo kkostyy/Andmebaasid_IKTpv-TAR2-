@@ -1,0 +1,312 @@
+' taisnurkse kolmnurga pindala
+' ise kirjutatud funktsioon
+Function Pindala(a, b)
+    Pindala = (a * b) / 2
+End Function
+' Public Function PindalaAI(ByVal a As Double, ByVal b As Double) As Double
+' PindalaAI = (a * b) / 2
+' End Function
+' taisnurkse kolmnurga pindala AI abil
+Public Function PindalaAI(ByVal a As Double, ByVal b As Double) As Variant
+    ' Kontroll: molemad vaartused peavad olema positiivsed
+    If a <= 0 Or b <= 0 Then
+        PindalaAI = CVErr(xlErrValue) ' Tagastab Exceli #VALUE! vea
+        Exit Function
+    End If
+    ' Arvutamine
+    PindalaAI = (a * b) / 2
+End Function
+Function perimetr(a, b, c)
+    perimetr = a + b + c
+End Function
+
+Public Function PerimetrAI(ByVal a As Double, ByVal b As Double, ByVal c As Double) As Variant
+    ' Kontroll: kuljed peavad olema positiivsed ja moodustama kolmnurga
+    If a <= 0 Or b <= 0 Or c <= 0 Or (a + b <= c) Or (a + c <= b) Or (b + c <= a) Then
+        PerimetrAI = CVErr(xlErrValue)
+        Exit Function
+    End If
+
+    ' Arvutamine: a + b + c
+    PerimetrAI = a + b + c
+End Function
+' Funktsioon lisab hinnale käibemaksu (22%)
+Public Function HindKaibemaksuga(hind)
+    HindKaibemaksuga = hind * 1.22
+End Function
+
+' Funktsioon lisab hinnale käibemaksu (22%)
+Public Function HindKaibemaksugaAl(ByVal hind As Double) As Variant
+    ' Kontroll: hind peab olema positiivne arv
+    If hind < 0 Then
+        HindKaibemaksugaAl = CVErr(xlErrValue) ' Tagastab Exceli #VALUE! vea
+        Exit Function
+    End If
+
+    ' Arvutamine: hind * 1.22 (lisab 22% käibemaksu)
+    HindKaibemaksugaAl = hind * 1.22
+End Function
+' Funktsioon, mis leiab isikukoodi pohjal sunnikuu nime
+Public Function Sunnikuu(ByVal isikukood As String) As Variant
+    ' 1. KONTROLL: Isikukood peab olema tapselt 11 marki pikk
+    If Len(isikukood) <> 11 Then
+        Sunnikuu = CVErr(xlErrValue) ' Kui pikkus on vale, tagastab vea #VALUE!
+        Exit Function
+    End If
+
+    ' 2. ERALDAMINE: Votame isikukoodist 4. ja 5. margi (kuu number)
+    ' Mid(isikukood, 4, 2) tahendab: alusta 4. positsioonist ja vota 2 sumbolit
+    Dim kuuNr As Integer
+    kuuNr = Val(Mid(isikukood, 4, 2))
+
+    ' 3. VALIK: Kasutame Select Case konstruktsiooni nime leidmiseks
+    Select Case kuuNr
+        Case 1: Sunnikuu = "jaanuar"
+        Case 2: Sunnikuu = "veebruar"
+        Case 3: Sunnikuu = "marts"
+        Case 4: Sunnikuu = "aprill"
+        Case 5: Sunnikuu = "mai"
+        Case 6: Sunnikuu = "juuni"
+        Case 7: Sunnikuu = "juuli"
+        Case 8: Sunnikuu = "august"
+        Case 9: Sunnikuu = "september"
+        Case 10: Sunnikuu = "oktoober"
+        Case 11: Sunnikuu = "november"
+        Case 12: Sunnikuu = "detsember"
+        Case Else
+            ' Kui kuu number ei ole 1-12 vahemikus
+            Sunnikuu = CVErr(xlErrValue)
+    End Select
+End Function
+
+
+' Tagastab sünnikuu nime isikukoodi põhjal
+Public Function SunnikuuAl(ByVal isikukood As String) As Variant
+    ' Kontroll: isikukood peab olema 11 märki pikk
+    If Len(isikukood) <> 11 Then
+        SunnikuuAl = CVErr(xlErrValue)
+        Exit Function
+    End If
+
+    ' Eraldame 4. ja 5. märgi (kuu number)
+    Dim kuuNr As Integer
+    kuuNr = Val(Mid(isikukood, 4, 2))
+
+    ' Kontroll: kuu number peab olema vahemikus 1-12
+    If kuuNr < 1 Or kuuNr > 12 Then
+        SunnikuuAl = CVErr(xlErrValue)
+        Exit Function
+    End If
+    
+
+    ' Tagastab kuu nime (True tähendab täispikka nime)
+    SunnikuuAl = MonthName(kuuNr, False)
+End Function
+'ise kirjutatud
+Public Function Sistema(x As Double) As Double
+    If x < -5 Or x > 5 Then
+        Sistema = 1 / (5 - x * x)
+    Else
+        Sistema = Cos(x)
+    End If
+End Function
+'Al abil
+Public Function SistemaAl(x As Double) As Double
+    Select Case True
+        Case Abs(x) > 5
+            SistemaAl = 1 / (5 - x ^ 2)
+        Case Else
+            SistemaAl = Cos(x)
+    End Select
+End Function
+' Liitintressi arvutaja
+
+' liitintressi arvutaja
+' ise kirjutatud
+Public Function Laen(Summa, Aastad, Pros)
+    For i = 0 To Aastad Step 1
+        Summa = Summa + Summa * (Pros / 100)
+    Next i
+    Laen = Summa
+End Function
+
+
+Function LaenAI(Summa As Double, Aastad As Integer, Pros As Double) As Variant
+
+    If Summa <= 0 Or Aastad < 0 Or Pros < 0 Then
+        LaenAI = CVErr(xlErrValue)
+        Exit Function
+    End If
+
+    Dim i As Integer
+
+    For i = 0 To Aastad Step 1
+        Summa = Summa + Summa * (Pros / 100)
+    Next i
+
+    LaenAI = Summa
+
+End Function
+' ise kirjutatud
+Function komission(puudumised As Integer, kehviHindeid As Integer) As String
+
+    ' Otsustame vastavalt tingimustele
+    If puudumised > 40 And kehviHindeid >= 3 Then
+        komission = "Välja!"
+
+    ElseIf puudumised = 0 And kehviHindeid = 0 Then
+        komission = "Kiitus!"
+
+    ElseIf puudumised < 40 And kehviHindeid < 3 Then
+        komission = "Noomitus!"
+
+    Else
+        ' Kui jääb mõni muu kombinatsioon (nt >40 puudumist, aga <3 halba hinnet)
+        komission = "Küsimus arutamiseks komisjonis."
+    End If
+
+End Function
+
+Function komissionAI(puudumised As Integer, kehviHindeid As Integer) As String
+
+    Select Case True
+
+        Case puudumised > 40 And kehviHindeid >= 3
+            komissionAI = "Välja!"
+
+        Case puudumised = 0 And kehviHindeid = 0
+            komissionAI = "Kiitus!"
+
+        Case puudumised < 40 And kehviHindeid < 3
+            komissionAI = "Noomitus!"
+
+        Case Else
+            komissionAI = "Küsimus arutamiseks komisjonis."
+
+    End Select
+
+End Function
+
+Function nettopalk(tunnitasu As Double, tunnid As Double) As Double
+    Dim bruto As Double
+    Dim tmv As Double         ' tulumaksuvaba miinimum
+    Dim maksustatav As Double
+    Dim tulumaks As Double
+
+    bruto = tunnitasu * tunnid
+
+    ' --- Tulumaksuvaba miinimum ---
+    If bruto <= 1200 Then
+        tmv = 545
+    ElseIf bruto >= 2100 Then
+        tmv = 0
+    Else
+        tmv = 545 - 545 / (2100 - 1200) * (bruto - 1200)
+    End If
+
+    maksustatav = bruto - tmv
+    If maksustatav < 0 Then maksustatav = 0
+
+    tulumaks = maksustatav * 0.2
+
+    nettopalk = bruto - tulumaks
+End Function
+
+Function nettopalkAI(tunnitasu As Double, tunnid As Double) As Double
+    Dim bruto As Double
+    Dim tmv As Double
+    Dim maksustatav As Double
+    Dim tulumaks As Double
+
+    bruto = tunnitasu * tunnid
+
+    ' --- Tulumaksuvaba miinimum ---
+    Select Case True
+        Case bruto <= 1200
+            tmv = 545
+
+        Case bruto >= 2100
+            tmv = 0
+
+        Case Else
+            tmv = 545 - 545 / (2100 - 1200) * (bruto - 1200)
+    End Select
+
+    maksustatav = bruto - tmv
+    If maksustatav < 0 Then maksustatav = 0
+
+    tulumaks = maksustatav * 0.2
+
+    nettopalkAI = bruto - tulumaks
+End Function
+
+Function Kolmnurga_kontroll(a As Double, b As Double, c As Double) As String
+    Dim suurim As Double, x As Double, Y As Double
+
+    ' Kontroll: kas kolmnurk saab eksisteerida
+    If a + b <= c Or a + c <= b Or b + c <= a Then
+        Kolmnurga_kontroll = "Kolmnurk ei eksisteeri."
+        Exit Function
+    End If
+
+    ' Leiame suurima külje
+    suurim = a
+    x = b: Y = c
+    If b > suurim Then suurim = b: x = a: Y = c
+    If c > suurim Then suurim = c: x = a: Y = b
+
+    ' Teravnurkne kui suurim² < x² + y²
+    If suurim ^ 2 < x ^ 2 + Y ^ 2 Then
+        Kolmnurga_kontroll = "Kolmnurk on teravnurkne."
+    Else
+        Kolmnurga_kontroll = "Kolmnurk ei ole teravnurkne."
+    End If
+End Function
+
+Function Kolmnurga_kontrollAI(a As Double, b As Double, c As Double) As String
+    Dim suurim As Double, x As Double, Y As Double
+
+    ' Esmalt kontrollime, kas kolmnurk üldse saab eksisteerida
+    Select Case True
+        Case a + b <= c Or a + c <= b Or b + c <= a
+            Kolmnurga_kontrollAI = "Kolmnurk ei eksisteeri."
+            Exit Function
+    End Select
+
+    ' Leiame suurima külje
+    suurim = a: x = b: Y = c
+    If b > suurim Then suurim = b: x = a: Y = c
+    If c > suurim Then suurim = c: x = a: Y = b
+
+    ' Kontroll teravnurksuse kohta
+    Select Case True
+        Case suurim ^ 2 < x ^ 2 + Y ^ 2
+            Kolmnurga_kontrollAI = "Kolmnurk on teravnurkne."
+        Case Else
+            Kolmnurga_kontrollAI = "Kolmnurk ei ole teravnurkne."
+    End Select
+End Function
+
+Function Pifagor(a As Double, b As Double) As Double
+    If a < 0 Or b < 0 Then
+        Pifagor = CVErr(xlErrValue)
+    Else
+        Pifagor = Sqr(a ^ 2 + b ^ 2)
+    End If
+End Function
+
+Function PifagorAI(a As Double, b As Double) As Double
+
+    Select Case True
+        Case a < 0 Or b < 0
+            PifagorAI = CVErr(xlErrValue)
+
+        Case Else
+            PifagorAI = Sqr(a ^ 2 + b ^ 2)
+    End Select
+
+End Function
+
+
+    
+
