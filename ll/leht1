@@ -1,0 +1,181 @@
+Sub KysiPindala()
+    Dim a As Variant
+    Dim b As Variant
+    Dim tulemus As Variant
+
+    ' Kьsime kasutajalt sisendid
+    a = InputBox("Sisesta kьlg a:", "Kolmnurga pindala")
+    b = InputBox("Sisesta kьlg b:", "Kolmnurga pindala")
+
+    ' Kontrollime, kas kasutaja vajutas Cancel
+    If a = "" Or b = "" Then
+        MsgBox "Sisestamine katkestati.", vbExclamation
+        Exit Sub
+    End If
+
+    ' Arvutame (kasutame sinu funktsiooni)
+    tulemus = PindalaAI(CDbl(a), CDbl(b))
+
+    ' Kui funktsioon tagastab errori (#VALUE!)
+    If IsError(tulemus) Then
+        MsgBox "Vigased sisendid! Mхlemad vддrtused peavad olema positiivsed arvud.", _
+               vbCritical, "Viga"
+        Exit Sub
+    End If
+
+    ' Kuvame tulemuse
+    MsgBox "Kolmnurga pindala on: " & Format(tulemus, "0.00"), _
+           vbInformation, "Tulemus"
+End Sub
+
+Sub KysiKomission()
+    Dim puud As Variant
+    Dim hinded As Variant
+    Dim tulemus As String
+
+    ' Kьsime kasutajalt sisendid
+    puud = InputBox("Sisesta puudumiste arv:", "Komisjoni otsus")
+    hinded = InputBox("Sisesta halbade hinnete arv:", "Komisjoni otsus")
+
+    ' Kontrollime Cancel vajutamist
+    If puud = "" Or hinded = "" Then
+        MsgBox "Sisestamine katkestati.", vbExclamation
+        Exit Sub
+    End If
+
+    ' Kutsub sinu funktsiooni
+    tulemus = komission(CInt(puud), CInt(hinded))
+
+    ' Kuvame tulemuse
+    MsgBox "Komisjoni otsus: " & tulemus, vbInformation, "Tulemus"
+
+End Sub
+
+
+Sub KysiNettoPalk()
+    Dim t As Variant
+    Dim h As Variant
+    Dim tulemus As Double
+
+    ' Kьsime tunnitasu
+    t = InputBox("Sisesta tunnitasu (Ђ):", "Netopalga arvutus")
+    If t = "" Then
+        MsgBox "Sisestamine katkestati.", vbExclamation
+        Exit Sub
+    End If
+
+    ' Kьsime tundide arvu
+    h = InputBox("Sisesta tццtundide arv:", "Netopalga arvutus")
+    If h = "" Then
+        MsgBox "Sisestamine katkestati.", vbExclamation
+        Exit Sub
+    End If
+
+    ' Kontrollime, kas sisendid on numbrid ja positiivsed
+    If Not IsNumeric(t) Or Not IsNumeric(h) Then
+        MsgBox "Sisesta ainult numbrid!", vbCritical
+        Exit Sub
+    End If
+
+    If CDbl(t) < 0 Or CDbl(h) < 0 Then
+        MsgBox "Tunnitasu ja tunnid peavad olema positiivsed!", vbCritical
+        Exit Sub
+    End If
+
+    ' Arvutame netopalga (kasutame sinu funktsiooni)
+    tulemus = nettopalk(CDbl(t), CDbl(h))
+
+    ' Kuvame tulemuse
+    MsgBox "Netopalk on: " & Format(tulemus, "0.00 Ђ"), _
+           vbInformation, "Tulemus"
+
+End Sub
+
+
+Sub KysiPifagorAI()
+    Dim x As Variant
+    Dim Y As Variant
+    Dim tulemus As Variant
+
+    ' Kьsime kaateti a pikkuse
+    x = InputBox("Sisesta kaateti a pikkus:", "Pythagoras AI")
+    If x = "" Then
+        MsgBox "Sisestamine katkestati.", vbExclamation
+        Exit Sub
+    End If
+
+    ' Kьsime kaateti b pikkuse
+    Y = InputBox("Sisesta kaateti b pikkus:", "Pythagoras AI")
+    If Y = "" Then
+        MsgBox "Sisestamine katkestati.", vbExclamation
+        Exit Sub
+    End If
+
+    ' Kontrollime numbrilisust
+    If Not IsNumeric(x) Or Not IsNumeric(Y) Then
+        MsgBox "Sisesta ainult numbrid!", vbCritical
+        Exit Sub
+    End If
+
+    ' Kutsub sinu funktsiooni
+    tulemus = PifagorAI(CDbl(x), CDbl(Y))
+
+    ' Kontrollime funktsiooni viga (#VALUE!)
+    If IsError(tulemus) Then
+        MsgBox "Vigased sisendid! a ja b peavad olema positiivsed.", vbCritical
+        Exit Sub
+    End If
+
+    ' Kuvame tulemuse
+    MsgBox "Hьpotenuus = " & Format(tulemus, "0.00"), _
+           vbInformation, "Pythagorase tulemus"
+
+End Sub
+
+Sub KysiLaenAI()
+    Dim S As Variant
+    Dim Y As Variant
+    Dim P As Variant
+    Dim tulemus As Variant
+
+    ' Kьsi laenusumma
+    S = InputBox("Sisesta laenu summa (Ђ):", "Laen AI arvutus")
+    If S = "" Then
+        MsgBox "Sisestamine katkestati.", vbExclamation
+        Exit Sub
+    End If
+
+    ' Kьsi aastate arv
+    Y = InputBox("Sisesta aastate arv:", "Laen AI arvutus")
+    If Y = "" Then
+        MsgBox "Sisestamine katkestati.", vbExclamation
+        Exit Sub
+    End If
+
+    ' Kьsi intress (%)
+    P = InputBox("Sisesta aastane intress (%):", "Laen AI arvutus")
+    If P = "" Then
+        MsgBox "Sisestamine katkestati.", vbExclamation
+        Exit Sub
+    End If
+
+    ' Kontrolli, kas sisendid on numbrid
+    If Not IsNumeric(S) Or Not IsNumeric(Y) Or Not IsNumeric(P) Then
+        MsgBox "Sisesta ainult numbrid!", vbCritical
+        Exit Sub
+    End If
+
+    ' Kutsub sinu funktsiooni
+    tulemus = LaenAI(CDbl(S), CInt(Y), CDbl(P))
+
+    ' Kontrollime, kas funktsioon tagastas vea (#VALUE!)
+    If IsError(tulemus) Then
+        MsgBox "Viga! Kхik vддrtused peavad olema positiivsed.", vbCritical
+        Exit Sub
+    End If
+
+    ' Kuvame lхpptulemuse
+    MsgBox "Lхplik tasumata laenusumma: " & Format(tulemus, "0.00 Ђ"), _
+           vbInformation, "Laen AI tulemus"
+
+End Sub
