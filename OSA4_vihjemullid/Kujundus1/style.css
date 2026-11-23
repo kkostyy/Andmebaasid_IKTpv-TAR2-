@@ -254,7 +254,7 @@ nav ul.alammenyy li {
 }
 nav ul.alammenyy li a {
     border-top: none;
-    text-align: left;
+    text-align: center;
 }
 /* jQuery hover() lisab selle klassi */
 nav ul li a.hover {
