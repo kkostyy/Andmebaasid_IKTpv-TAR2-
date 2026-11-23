@@ -1,0 +1,59 @@
+/************ JÄLJERIBA (Breadcrumb) menüü *****************/
+/* Kast, milles jäljeriba asub – sobib lehe rohelise kujundusega */
+.jaljeriba {
+    font-family: Verdana, sans-serif;
+    font-variant: small-caps;
+    font-size: 15px;
+    text-align: left;
+    background-color: #e8f5e9;
+    border-left: 6px solid green;
+    border-bottom: 2px solid darkgreen;
+    border-radius: 4px;
+    margin: 5px;
+    padding: 8px 14px;
+}
+
+/* Klassid, mida jQuery lisab addClass() meetodiga */
+.ul_kujundus {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+.li_kujundus {
+    display: inline;
+}
+/* eraldaja iga alamtaseme ees (› nool) */
+.li_kujundus::before {
+    content: "\203A";
+    color: darkgreen;
+    font-weight: bold;
+    margin: 0 8px;
+}
+.jaljeriba li {
+    display: inline;
+}
+
+/* lingid */
+.jaljeriba a {
+    color: darkgreen;
+    text-decoration: none;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+}
+/* jQuery hover() lisab selle klassi */
+.jaljeriba a.hover {
+    background-color: green;
+    color: white;
+}
+/* esimene lüli – Kodu */
+.jaljeriba .esimene > a::before {
+    content: "\2302  ";
+}
+/* praegune leht – viimane lüli, ei ole link */
+.jaljeriba .praegune > span {
+    color: black;
+    font-weight: bold;
+    padding: 2px 6px;
+}

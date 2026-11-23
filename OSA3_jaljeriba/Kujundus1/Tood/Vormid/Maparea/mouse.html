@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiir</title>
+    <link rel="stylesheet" href="mapareaStyle.css">
+    <link rel="stylesheet" href="../../../jaljeriba.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../../../jaljeriba.js" defer></script>
+</head>
+<body>
+<!--jäljeriba (breadcrumb) menüü-->
+<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
+<ul id="menyy">
+    <li><a href="../../../index.html">Kodu</a>
+        <ul>
+            <li><a href="../../../tood.html">Tehtud tööd</a>
+                <ul>
+                    <li><a href="maparea.html">Map area pilt</a>
+                        <ul>
+                            <li><span>Hiir</span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+</div>
+<h1>Map area kasutamine</h1>
+<div class="container">
+    <img src="Pildid/images.png" alt="Arvuti pilt" usemap="#arvuti" />
+    <map name="arvuti">
+        <area shape="poly"
+              coords="166,25, 681,25, 681,338, 479,338, 479,372, 598,372, 598,415, 295,415, 295,372, 390,372, 390,338, 166,338"
+              href="monitor.html" alt="Monitor" />
+        <area shape="rect" coords="95,236,140,355" href="speakers.html" alt="Kõlarid" />
+        <area shape="rect" coords="682,207,729,358" href="speakers.html" alt="Kõlarid" />
+        <area shape="rect" coords="69,357,170,507" href="plant.html" alt="Taim" />
+        <area shape="poly" coords="201,475, 270,468, 289,527, 213,544" href="phone.html" alt="Telefon" />
+        <area shape="poly" coords="294,437, 679,401, 731,464, 317,514" href="keyboard.html" alt="Klaviatuur" />
+        <area shape="rect" coords="764,384,856,437" href="mouse.html" alt="Hiir" />
+    </map>
+    <div class="info-block">
+        <h2>Hiir</h2>
+        <p>
+            Klaviatuurist paremal, mustal hiirematil asub ergonoomiline arvutihiir.
+            Hiir on osutusseade, mis muudab käeliigutused kursori liikumiseks ekraanil ning võimaldab objekte valida, lohistada ja kerida.
+            Mugav ja täpne hiir vähendab randme koormust ning kiirendab igapäevast tööd nii kontoris kui ka graafika ja mängude puhul.
+        </p>
+        <p>Loe lähemalt: <a href="https://et.wikipedia.org/wiki/Arvutihiir" target="_blank">Vikipeedia — Arvutihiir</a></p>
+        <img src="Pildid/hiir.jpg" alt="Hiir pilt" />
+        <div class="btn-container">
+            <a href="maparea.html" class="btn">← Mine tagasi maparea.html lehele</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

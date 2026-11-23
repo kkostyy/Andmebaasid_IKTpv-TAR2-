@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulaatorid</title>
+    <link rel="stylesheet" href="KalkStyle.css">
+    <script src="Kalk1Script.js"></script>
+    <script src="Kalk2Script.js"></script>
+    <link rel="stylesheet" href="../../../jaljeriba.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../../../jaljeriba.js" defer></script>
+</head>
+<body>
+<!--jäljeriba (breadcrumb) menüü-->
+<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
+<ul id="menyy">
+    <li><a href="../../../index.html">Kodu</a>
+        <ul>
+            <li><a href="../../../tood.html">Tehtud tööd</a>
+                <ul>
+                    <li><span>Kalkulaatorid</span></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+</div>
+<h1>Kalkulaatorid</h1>
+<section id = "yld">
+    <section id="kalk1">
+        <h2>Meetri/tolli kalkulaator</h2>
+        <label for="arv"> Sisesta arv</label>
+        <input type="number" id="arv" min="1" max="100" step="1" value="10" onchange="teisendamine()">
+        <br>
+        <input type="radio" name="valik" id="meeter" value="meeter">
+        <label for="meeter">Meeter</label>
+        <br>
+        <input type="radio" name="valik" id="tolli" value="tolli">
+        <label for="tolli">Tolli</label>
+        <br>
+        <div id = "vastus">Vastus</div>
+        <img id = "vastusepilt" src="" alt="Weight">
+    </section>
+    <section id = "kalk2">
+        <h2>Joogi kalkulator</h2>
+        <label for="kogus"> Mitu tk soovid:</label>
+        <input type="number" id="kogus" min="1" max="10" step="1" value="10" onchange="jookideValik()">
+        <br>
+        <select name="JoogiValik" id="JoogiValik" onchange="jookideValik()">
+            <option value="">Vali...</option>
+            <option value="kohv">Kohv</option>
+            <option value="vesi">Vesi</option>
+            <option value="cola">Coca-Cola</option>
+            <option value="fanta">Fanta</option>
+        </select>
+        <div id ="vastus2"></div>
+    </section>
+    <section id = "kalk3"> Moodle ülesanne 2 </section>
+</section>
+</body>
+</html>

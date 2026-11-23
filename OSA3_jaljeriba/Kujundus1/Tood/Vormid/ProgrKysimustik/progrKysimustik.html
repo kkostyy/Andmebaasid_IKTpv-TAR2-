@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>Programmeerimise küsimustik</title>
+    <link rel="stylesheet" href="progrKysimustikStyle.css">
+    <script src="progrKysimustikScript.js" defer></script>
+    <link rel="stylesheet" href="../../../jaljeriba.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../../../jaljeriba.js" defer></script>
+</head>
+<body>
+<!--jäljeriba (breadcrumb) menüü-->
+<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
+<ul id="menyy">
+    <li><a href="../../../index.html">Kodu</a>
+        <ul>
+            <li><a href="../../../tood.html">Tehtud tööd</a>
+                <ul>
+                    <li><span>Programmeerimise küsimustik</span></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+</div>
+<h1>Programmeerimise küsimustik</h1>
+<div>HTML vormid ja nupud</div>
+
+<form id="kysimustikForm" action="#">
+    <table>
+        <tr>
+            <td>
+                <label>Milliseid programmeerimiskeeli sa tead?</label>
+            </td>
+            <td>
+                <input type="checkbox" name="keeled" id="lang_js" value="JavaScript" onchange="keeledValik()">
+                <label for="lang_js">JavaScript</label><br>
+                <input type="checkbox" name="keeled" id="lang_py" value="Python" onchange="keeledValik()">
+                <label for="lang_py">Python</label><br>
+                <input type="checkbox" name="keeled" id="lang_java" value="Java" onchange="keeledValik()">
+                <label for="lang_java">Java</label><br>
+                <input type="checkbox" name="keeled" id="lang_cs" value="C#" onchange="keeledValik()">
+                <label for="lang_cs">C#</label><br>
+                <input type="checkbox" name="keeled" id="lang_php" value="PHP" onchange="keeledValik()">
+                <label for="lang_php">PHP</label>
+            </td>
+            <td>
+                <div id="vastusKeeled"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="arvamus">Mida arvad programmeerimise õppimisest?</label>
+            </td>
+            <td>
+                <textarea id="arvamus" rows="3" cols="25" oninput="arvamusValik()"></textarea>
+            </td>
+            <td>
+                <div id="vastusArvamus"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="tunnid">Mitu tundi nädalas tegeled programmeerimisega?</label>
+            </td>
+            <td>
+                <input type="number" id="tunnid" min="0" max="168" value="0" oninput="tunnidValik()">
+            </td>
+            <td>
+                <div id="vastusTunnid"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Kas sulle meeldib programmeerida?</label>
+            </td>
+            <td>
+                <input type="radio" name="meeldivus" id="meeldib_jah" value="Jah" onclick="meeldivusValik()">
+                <label for="meeldib_jah">Jah</label><br>
+                <input type="radio" name="meeldivus" id="meeldib_ei" value="Ei" onclick="meeldivusValik()">
+                <label for="meeldib_ei">Ei</label>
+            </td>
+            <td>
+                <div id="vastusMeeldivus"></div>
+                <img id ="Pilt" src="Pildid/nimetu.png" alt="Pilt" class="pildi-ikoon" style="display: none;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="tooriistad">Milliseid programmeerimisega seotud tööriistu oskad nimetada?</label>
+            </td>
+            <td>
+                <input type="text" id="tooriistad" placeholder="nt Visual Studio Code, GitHub" oninput="tooriistadValik()">
+            </td>
+            <td>
+                <div id="vastusTooriistad"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="soovitudKeel">Millist programmeerimiskeelt sooviksid kõige rohkem õppida?</label>
+            </td>
+            <td>
+                <select id="soovitudKeel" onchange="soovitudKeelValik()">
+                    <option value="">Vali...</option>
+                    <option value="TypeScript">TypeScript</option>
+                    <option value="C++">C++</option>
+                    <option value="Rust">Rust</option>
+                    <option value="Go">Go</option>
+                    <option value="Kotlin">Kotlin</option>
+                    <option value="Swift">Swift</option>
+                </select>
+            </td>
+            <td>
+                <div id="vastusSoovitudKeel"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="button" value="Puhasta" onclick="puhastaKoik()">
+            </td>
+            <td colspan="2">
+                <input type="button" value="Saada / Näita andmed" onclick="naitaKokkuvote()">
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <div id="vastusKoik"></div>
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

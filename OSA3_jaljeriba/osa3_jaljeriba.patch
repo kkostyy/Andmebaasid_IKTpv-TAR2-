@@ -1,0 +1,880 @@
+diff --git a/Kujundus1/Tood/Vormid/IseseisvadTabelid/iseseisvadTabel.html b/Kujundus1/Tood/Vormid/IseseisvadTabelid/iseseisvadTabel.html
+index e93a350..16a2aaa 100644
+--- a/Kujundus1/Tood/Vormid/IseseisvadTabelid/iseseisvadTabel.html
++++ b/Kujundus1/Tood/Vormid/IseseisvadTabelid/iseseisvadTabel.html
+@@ -4,9 +4,29 @@
+     <meta charset="UTF-8">
+     <title>Iseseisvad Tabel</title>
+     <link rel="stylesheet" href="iseseisvadTabelStyle.css">
++    <link rel="stylesheet" href="../../../jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="../../../jaljeriba.js" defer></script>
+ </head>
+ <body>
+-<a href="../Tabelid/tabelid.html" class="back-link">&larr; Tagasi tabelite lehele</a>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="../../../index.html">Kodu</a>
++        <ul>
++            <li><a href="../../../tood.html">Tehtud tööd</a>
++                <ul>
++                    <li><a href="../Tabelid/tabelid.html">Tabelid</a>
++                        <ul>
++                            <li><span>Iseseisvad tabelid</span></li>
++                        </ul>
++                    </li>
++                </ul>
++            </li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <table id="table">
+     <tr>
+         <td colspan="5">C</td>
+diff --git a/Kujundus1/Tood/Vormid/Kalkulaatorid/Kalkulaatorid.html b/Kujundus1/Tood/Vormid/Kalkulaatorid/Kalkulaatorid.html
+index c72586f..ba45c78 100644
+--- a/Kujundus1/Tood/Vormid/Kalkulaatorid/Kalkulaatorid.html
++++ b/Kujundus1/Tood/Vormid/Kalkulaatorid/Kalkulaatorid.html
+@@ -6,8 +6,25 @@
+     <link rel="stylesheet" href="KalkStyle.css">
+     <script src="Kalk1Script.js"></script>
+     <script src="Kalk2Script.js"></script>
++    <link rel="stylesheet" href="../../../jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="../../../jaljeriba.js" defer></script>
+ </head>
+ <body>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="../../../index.html">Kodu</a>
++        <ul>
++            <li><a href="../../../tood.html">Tehtud tööd</a>
++                <ul>
++                    <li><span>Kalkulaatorid</span></li>
++                </ul>
++            </li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <h1>Kalkulaatorid</h1>
+ <section id = "yld">
+     <section id="kalk1">
+diff --git a/Kujundus1/Tood/Vormid/KuupevaFunktsioon/kuupevaFunktsioon.html b/Kujundus1/Tood/Vormid/KuupevaFunktsioon/kuupevaFunktsioon.html
+index a2ecdbe..766cc5e 100644
+--- a/Kujundus1/Tood/Vormid/KuupevaFunktsioon/kuupevaFunktsioon.html
++++ b/Kujundus1/Tood/Vormid/KuupevaFunktsioon/kuupevaFunktsioon.html
+@@ -4,8 +4,25 @@
+     <meta charset="UTF-8">
+     <title>Kuupäeva funktsioonid</title>
+     <script src="kuupaev.js"></script>
++    <link rel="stylesheet" href="../../../jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="../../../jaljeriba.js" defer></script>
+ </head>
+ <body>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="../../../index.html">Kodu</a>
++        <ul>
++            <li><a href="../../../tood.html">Tehtud tööd</a>
++                <ul>
++                    <li><span>Kuupäeva funktsioonid</span></li>
++                </ul>
++            </li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <h1>
+     kuupäeva funktsioonid
+ 
+diff --git "a/Kujundus1/Tood/Vormid/Kuup\303\244evaFunktsioon/kuup\303\244evaFunktsioon.html" "b/Kujundus1/Tood/Vormid/Kuup\303\244evaFunktsioon/kuup\303\244evaFunktsioon.html"
+index a2ecdbe..766cc5e 100644
+--- "a/Kujundus1/Tood/Vormid/Kuup\303\244evaFunktsioon/kuup\303\244evaFunktsioon.html"
++++ "b/Kujundus1/Tood/Vormid/Kuup\303\244evaFunktsioon/kuup\303\244evaFunktsioon.html"
+@@ -4,8 +4,25 @@
+     <meta charset="UTF-8">
+     <title>Kuupäeva funktsioonid</title>
+     <script src="kuupaev.js"></script>
++    <link rel="stylesheet" href="../../../jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="../../../jaljeriba.js" defer></script>
+ </head>
+ <body>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="../../../index.html">Kodu</a>
++        <ul>
++            <li><a href="../../../tood.html">Tehtud tööd</a>
++                <ul>
++                    <li><span>Kuupäeva funktsioonid</span></li>
++                </ul>
++            </li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <h1>
+     kuupäeva funktsioonid
+ 
+diff --git a/Kujundus1/Tood/Vormid/Kysimustik/kysimustik.html b/Kujundus1/Tood/Vormid/Kysimustik/kysimustik.html
+index 7c70bc7..64b3059 100644
+--- a/Kujundus1/Tood/Vormid/Kysimustik/kysimustik.html
++++ b/Kujundus1/Tood/Vormid/Kysimustik/kysimustik.html
+@@ -5,9 +5,25 @@
+     <title>Muusika küsimustik</title>
+     <link rel="stylesheet" href="kysimustikStyle.css">
+     <script src="kysimustikScript.js" defer></script>
++    <link rel="stylesheet" href="../../../jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="../../../jaljeriba.js" defer></script>
+ </head>
+ <body>
+-<a href="../../../tood.html" class="back-link">&larr; Tagasi tehtud tööde juurde</a>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="../../../index.html">Kodu</a>
++        <ul>
++            <li><a href="../../../tood.html">Tehtud tööd</a>
++                <ul>
++                    <li><span>Muusika küsimustik</span></li>
++                </ul>
++            </li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <h1>Muusika küsimustik</h1>
+ <div>HTML vormid ja nupud</div>
+ 
+diff --git a/Kujundus1/Tood/Vormid/Kysimustik_jQuery/kysimustik.html b/Kujundus1/Tood/Vormid/Kysimustik_jQuery/kysimustik.html
+index bb99c7a..e04a531 100644
+--- a/Kujundus1/Tood/Vormid/Kysimustik_jQuery/kysimustik.html
++++ b/Kujundus1/Tood/Vormid/Kysimustik_jQuery/kysimustik.html
+@@ -9,9 +9,24 @@
+     <script src="kysimustikScript.js" defer></script>
+     <!--jQuery valideerimine-->
+     <script src="valideerimine.js" defer></script>
++    <link rel="stylesheet" href="../../../jaljeriba.css">
++    <script src="../../../jaljeriba.js" defer></script>
+ </head>
+ <body>
+-<a href="../../../tood.html" class="back-link">&larr; Tagasi tehtud tööde juurde</a>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="../../../index.html">Kodu</a>
++        <ul>
++            <li><a href="../../../tood.html">Tehtud tööd</a>
++                <ul>
++                    <li><span>Muusika küsimustik (jQuery valideerimine)</span></li>
++                </ul>
++            </li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <h1>Muusika küsimustik</h1>
+ <div>jQuery valideerimine: täida kõik väljad ja vajuta „Saada / Näita andmed“</div>
+ <div id="koondviga"></div>
+diff --git a/Kujundus1/Tood/Vormid/LehtToo/lehtToo.html b/Kujundus1/Tood/Vormid/LehtToo/lehtToo.html
+index 40ed734..c423ffb 100644
+--- a/Kujundus1/Tood/Vormid/LehtToo/lehtToo.html
++++ b/Kujundus1/Tood/Vormid/LehtToo/lehtToo.html
+@@ -7,10 +7,25 @@
+         .back-link { display: inline-block; margin: 0 0 20px; padding: 9px 16px; background: #1a4a7a; color: #fff; text-decoration: none; border-radius: 4px; font-family: "Segoe UI", Tahoma, sans-serif; font-size: 14px; }
+         .back-link:hover { background: #143a60; }
+     </style>
++    <link rel="stylesheet" href="../../../jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="../../../jaljeriba.js" defer></script>
+ </head>
+ <body>
+-<a href="../../../tood.html" class="back-link">&larr; Tagasi tehtud tööde juurde</a>
+-
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="../../../index.html">Kodu</a>
++        <ul>
++            <li><a href="../../../tood.html">Tehtud tööd</a>
++                <ul>
++                    <li><span>LehtToo</span></li>
++                </ul>
++            </li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <h1>Pealkiri</h1>
+ 
+ <p>Tekst lõigu jaoks</p>
+diff --git a/Kujundus1/Tood/Vormid/Maparea/keyboard.html b/Kujundus1/Tood/Vormid/Maparea/keyboard.html
+index 41f35b4..a055dca 100644
+--- a/Kujundus1/Tood/Vormid/Maparea/keyboard.html
++++ b/Kujundus1/Tood/Vormid/Maparea/keyboard.html
+@@ -4,8 +4,29 @@
+     <meta charset="UTF-8">
+     <title>Klaviatuur</title>
+     <link rel="stylesheet" href="mapareaStyle.css">
++    <link rel="stylesheet" href="../../../jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="../../../jaljeriba.js" defer></script>
+ </head>
+ <body>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="../../../index.html">Kodu</a>
++        <ul>
++            <li><a href="../../../tood.html">Tehtud tööd</a>
++                <ul>
++                    <li><a href="maparea.html">Map area pilt</a>
++                        <ul>
++                            <li><span>Klaviatuur</span></li>
++                        </ul>
++                    </li>
++                </ul>
++            </li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <h1>Map area kasutamine</h1>
+ <div class="container">
+     <img src="Pildid/images.png" alt="Arvuti pilt" usemap="#arvuti" />
+diff --git a/Kujundus1/Tood/Vormid/Maparea/maparea.html b/Kujundus1/Tood/Vormid/Maparea/maparea.html
+index ca16831..e1be3bb 100644
+--- a/Kujundus1/Tood/Vormid/Maparea/maparea.html
++++ b/Kujundus1/Tood/Vormid/Maparea/maparea.html
+@@ -4,9 +4,25 @@
+     <meta charset="UTF-8">
+     <title>Map area</title>
+     <link rel="stylesheet" href="mapareaStyle.css">
++    <link rel="stylesheet" href="../../../jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="../../../jaljeriba.js" defer></script>
+ </head>
+ <body>
+-<a href="../../../tood.html" class="back-link">&larr; Tagasi tehtud tööde juurde</a>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="../../../index.html">Kodu</a>
++        <ul>
++            <li><a href="../../../tood.html">Tehtud tööd</a>
++                <ul>
++                    <li><span>Map area pilt</span></li>
++                </ul>
++            </li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <h1>Map area kasutamine</h1>
+ <div class="container">
+     <img src="Pildid/images.png" alt="Arvuti pilt" usemap="#arvuti" />
+diff --git a/Kujundus1/Tood/Vormid/Maparea/monitor.html b/Kujundus1/Tood/Vormid/Maparea/monitor.html
+index ef20182..9a6ead7 100644
+--- a/Kujundus1/Tood/Vormid/Maparea/monitor.html
++++ b/Kujundus1/Tood/Vormid/Maparea/monitor.html
+@@ -4,8 +4,29 @@
+     <meta charset="UTF-8">
+     <title>Monitor</title>
+     <link rel="stylesheet" href="mapareaStyle.css">
++    <link rel="stylesheet" href="../../../jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="../../../jaljeriba.js" defer></script>
+ </head>
+ <body>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="../../../index.html">Kodu</a>
++        <ul>
++            <li><a href="../../../tood.html">Tehtud tööd</a>
++                <ul>
++                    <li><a href="maparea.html">Map area pilt</a>
++                        <ul>
++                            <li><span>Monitor</span></li>
++                        </ul>
++                    </li>
++                </ul>
++            </li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <h1>Map area kasutamine</h1>
+ 
+ <div class="container">
+diff --git a/Kujundus1/Tood/Vormid/Maparea/mouse.html b/Kujundus1/Tood/Vormid/Maparea/mouse.html
+index cb9ed31..38824fa 100644
+--- a/Kujundus1/Tood/Vormid/Maparea/mouse.html
++++ b/Kujundus1/Tood/Vormid/Maparea/mouse.html
+@@ -4,8 +4,29 @@
+     <meta charset="UTF-8">
+     <title>Hiir</title>
+     <link rel="stylesheet" href="mapareaStyle.css">
++    <link rel="stylesheet" href="../../../jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="../../../jaljeriba.js" defer></script>
+ </head>
+ <body>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="../../../index.html">Kodu</a>
++        <ul>
++            <li><a href="../../../tood.html">Tehtud tööd</a>
++                <ul>
++                    <li><a href="maparea.html">Map area pilt</a>
++                        <ul>
++                            <li><span>Hiir</span></li>
++                        </ul>
++                    </li>
++                </ul>
++            </li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <h1>Map area kasutamine</h1>
+ <div class="container">
+     <img src="Pildid/images.png" alt="Arvuti pilt" usemap="#arvuti" />
+diff --git a/Kujundus1/Tood/Vormid/Maparea/phone.html b/Kujundus1/Tood/Vormid/Maparea/phone.html
+index 737b988..1bd333d 100644
+--- a/Kujundus1/Tood/Vormid/Maparea/phone.html
++++ b/Kujundus1/Tood/Vormid/Maparea/phone.html
+@@ -4,8 +4,29 @@
+     <meta charset="UTF-8">
+     <title>Nutitelefon</title>
+     <link rel="stylesheet" href="mapareaStyle.css">
++    <link rel="stylesheet" href="../../../jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="../../../jaljeriba.js" defer></script>
+ </head>
+ <body>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="../../../index.html">Kodu</a>
++        <ul>
++            <li><a href="../../../tood.html">Tehtud tööd</a>
++                <ul>
++                    <li><a href="maparea.html">Map area pilt</a>
++                        <ul>
++                            <li><span>Nutitelefon</span></li>
++                        </ul>
++                    </li>
++                </ul>
++            </li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <h1>Map area kasutamine</h1>
+ <div class="container">
+     <img src="Pildid/images.png" alt="Arvuti pilt" usemap="#arvuti" />
+diff --git a/Kujundus1/Tood/Vormid/Maparea/plant.html b/Kujundus1/Tood/Vormid/Maparea/plant.html
+index 5ce2bf7..70052e9 100644
+--- a/Kujundus1/Tood/Vormid/Maparea/plant.html
++++ b/Kujundus1/Tood/Vormid/Maparea/plant.html
+@@ -4,8 +4,29 @@
+     <meta charset="UTF-8">
+     <title>Taim</title>
+     <link rel="stylesheet" href="mapareaStyle.css">
++    <link rel="stylesheet" href="../../../jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="../../../jaljeriba.js" defer></script>
+ </head>
+ <body>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="../../../index.html">Kodu</a>
++        <ul>
++            <li><a href="../../../tood.html">Tehtud tööd</a>
++                <ul>
++                    <li><a href="maparea.html">Map area pilt</a>
++                        <ul>
++                            <li><span>Taim</span></li>
++                        </ul>
++                    </li>
++                </ul>
++            </li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <h1>Map area kasutamine</h1>
+ <div class="container">
+     <img src="Pildid/images.png" alt="Arvuti pilt" usemap="#arvuti" />
+diff --git a/Kujundus1/Tood/Vormid/Maparea/speakers.html b/Kujundus1/Tood/Vormid/Maparea/speakers.html
+index 06b2c46..a1f5895 100644
+--- a/Kujundus1/Tood/Vormid/Maparea/speakers.html
++++ b/Kujundus1/Tood/Vormid/Maparea/speakers.html
+@@ -4,8 +4,29 @@
+     <meta charset="UTF-8">
+     <title>Kõlarid</title>
+     <link rel="stylesheet" href="mapareaStyle.css">
++    <link rel="stylesheet" href="../../../jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="../../../jaljeriba.js" defer></script>
+ </head>
+ <body>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="../../../index.html">Kodu</a>
++        <ul>
++            <li><a href="../../../tood.html">Tehtud tööd</a>
++                <ul>
++                    <li><a href="maparea.html">Map area pilt</a>
++                        <ul>
++                            <li><span>Kõlarid</span></li>
++                        </ul>
++                    </li>
++                </ul>
++            </li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <h1>Map area kasutamine</h1>
+ <div class="container">
+     <img src="Pildid/images.png" alt="Arvuti pilt" usemap="#arvuti" />
+diff --git a/Kujundus1/Tood/Vormid/Objektid ja meetodid/Obj_met.html b/Kujundus1/Tood/Vormid/Objektid ja meetodid/Obj_met.html
+index aa08b2a..da4988c 100644
+--- a/Kujundus1/Tood/Vormid/Objektid ja meetodid/Obj_met.html	
++++ b/Kujundus1/Tood/Vormid/Objektid ja meetodid/Obj_met.html	
+@@ -6,8 +6,25 @@
+     <link rel="stylesheet" href="Obj_metStyle.css">
+     <!-- defer: skript käivitub alles siis, kui HTML on laetud, muidu getElementById annab null -->
+     <script src="Obj_met.js" defer></script>
++    <link rel="stylesheet" href="../../../jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="../../../jaljeriba.js" defer></script>
+ </head>
+ <body>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="../../../index.html">Kodu</a>
++        <ul>
++            <li><a href="../../../tood.html">Tehtud tööd</a>
++                <ul>
++                    <li><span>Objektid ja meetodid</span></li>
++                </ul>
++            </li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <h1>JS: Objektid ja meetodid</h1>
+ <p>Kõik tulemused on näha nii siin lehel kui ka konsoolis (F12 → Console).</p>
+ 
+diff --git a/Kujundus1/Tood/Vormid/PiltideVahetus/piltideVahetus.html b/Kujundus1/Tood/Vormid/PiltideVahetus/piltideVahetus.html
+index 01f33c1..ac2edf0 100644
+--- a/Kujundus1/Tood/Vormid/PiltideVahetus/piltideVahetus.html
++++ b/Kujundus1/Tood/Vormid/PiltideVahetus/piltideVahetus.html
+@@ -5,10 +5,25 @@
+     <title>Piltide vahetus JS abil</title>
+     <link rel="stylesheet" href="piltideVahetusStyle.css">
+     <script src="piltideVahetusScript.js"></script>
++    <link rel="stylesheet" href="../../../jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="../../../jaljeriba.js" defer></script>
+ </head>
+ <body onload="juhuslikPilt()">
+-<a href="../../../tood.html" class="back-link">&larr; Tagasi tehtud tööde juurde</a>
+-
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="../../../index.html">Kodu</a>
++        <ul>
++            <li><a href="../../../tood.html">Tehtud tööd</a>
++                <ul>
++                    <li><span>Piltide vahetus</span></li>
++                </ul>
++            </li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <h1>Juhuslik pilt</h1>
+ <img src="Pildid/smile.png" alt="" id="randomPilt">
+ <br>
+diff --git a/Kujundus1/Tood/Vormid/ProgrKysimustik/progrKysimustik.html b/Kujundus1/Tood/Vormid/ProgrKysimustik/progrKysimustik.html
+index b2e56c3..3e9f992 100644
+--- a/Kujundus1/Tood/Vormid/ProgrKysimustik/progrKysimustik.html
++++ b/Kujundus1/Tood/Vormid/ProgrKysimustik/progrKysimustik.html
+@@ -5,10 +5,25 @@
+     <title>Programmeerimise küsimustik</title>
+     <link rel="stylesheet" href="progrKysimustikStyle.css">
+     <script src="progrKysimustikScript.js" defer></script>
++    <link rel="stylesheet" href="../../../jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="../../../jaljeriba.js" defer></script>
+ </head>
+ <body>
+-<a href="../../../tood.html" class="back-link">&larr; Tagasi tehtud tööde juurde</a>
+-
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="../../../index.html">Kodu</a>
++        <ul>
++            <li><a href="../../../tood.html">Tehtud tööd</a>
++                <ul>
++                    <li><span>Programmeerimise küsimustik</span></li>
++                </ul>
++            </li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <h1>Programmeerimise küsimustik</h1>
+ <div>HTML vormid ja nupud</div>
+ 
+diff --git a/Kujundus1/Tood/Vormid/Raamatukogu/raamatukogu.html b/Kujundus1/Tood/Vormid/Raamatukogu/raamatukogu.html
+index 89e95f8..f240e36 100644
+--- a/Kujundus1/Tood/Vormid/Raamatukogu/raamatukogu.html
++++ b/Kujundus1/Tood/Vormid/Raamatukogu/raamatukogu.html
+@@ -4,8 +4,25 @@
+     <meta charset="UTF-8">
+     <title>Raamat ja raamatukogu</title>
+     <script src="raamatukoguScript.js" defer></script>
++    <link rel="stylesheet" href="../../../jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="../../../jaljeriba.js" defer></script>
+ </head>
+ <body>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="../../../index.html">Kodu</a>
++        <ul>
++            <li><a href="../../../tood.html">Tehtud tööd</a>
++                <ul>
++                    <li><span>Raamat ja raamatukogu</span></li>
++                </ul>
++            </li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <h1>Ülesanne: raamat ja raamatukogu</h1>
+ <p>Kõik tulemused on näha nii siin lehel kui ka konsoolis (F12 → Console).</p>
+ 
+diff --git a/Kujundus1/Tood/Vormid/Tabelid/tabelid.html b/Kujundus1/Tood/Vormid/Tabelid/tabelid.html
+index 73a661d..feb5ac7 100644
+--- a/Kujundus1/Tood/Vormid/Tabelid/tabelid.html
++++ b/Kujundus1/Tood/Vormid/Tabelid/tabelid.html
+@@ -5,9 +5,25 @@
+   <title>Tabelid</title>
+   <link rel="stylesheet" href="lipuStyle.css">
+   <link rel="stylesheet" href="tabelidStyle.css">
++    <link rel="stylesheet" href="../../../jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="../../../jaljeriba.js" defer></script>
+ </head>
+ <body>
+-<a href="../../../tood.html" class="back-link">&larr; Tagasi tehtud tööde juurde</a>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="../../../index.html">Kodu</a>
++        <ul>
++            <li><a href="../../../tood.html">Tehtud tööd</a>
++                <ul>
++                    <li><span>Tabelid</span></li>
++                </ul>
++            </li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <h1>Tabelid</h1>
+ 
+ <h2>Lihtne tabel</h2>
+diff --git a/Kujundus1/Tood/Vormid/jQuery/jQuery.html b/Kujundus1/Tood/Vormid/jQuery/jQuery.html
+index 8866cee..729056b 100644
+--- a/Kujundus1/Tood/Vormid/jQuery/jQuery.html
++++ b/Kujundus1/Tood/Vormid/jQuery/jQuery.html
+@@ -64,11 +64,27 @@
+             );
+         }
+     </script>
++    <link rel="stylesheet" href="../../../jaljeriba.css">
++    <script src="../../../jaljeriba.js" defer></script>
+ </head>
+ <body>
+ <header>
+     <h1>jQuery kasutamine</h1>
+ </header>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="../../../index.html">Kodu</a>
++        <ul>
++            <li><a href="../../../tood.html">Tehtud tööd</a>
++                <ul>
++                    <li><span>jQuery kasutamine</span></li>
++                </ul>
++            </li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <main>
+     <input type="button" value="<---" id="vasakule" style="display: none">
+     <input type="button" value="--->" id="paremale">
+diff --git a/Kujundus1/index.html b/Kujundus1/index.html
+index f136bcb..e165fc8 100644
+--- a/Kujundus1/index.html
++++ b/Kujundus1/index.html
+@@ -62,6 +62,8 @@
+             );
+         }
+     </script>
++    <link rel="stylesheet" href="jaljeriba.css">
++    <script src="jaljeriba.js" defer></script>
+ </head>
+ <body>
+ <!--veebilehe sisu-->
+@@ -93,6 +95,12 @@
+         </li>
+     </ul>
+ </nav>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><span>Kodu</span></li>
++</ul>
++</div>
+ <!--põhisisu-->
+ <main>
+     <input type="button" value="<---" id="vasakule" style="display: none">
+diff --git a/Kujundus1/jaljeriba.css b/Kujundus1/jaljeriba.css
+new file mode 100644
+index 0000000..f99e5bf
+--- /dev/null
++++ b/Kujundus1/jaljeriba.css
+@@ -0,0 +1,59 @@
++/************ JÄLJERIBA (Breadcrumb) menüü *****************/
++/* Kast, milles jäljeriba asub – sobib lehe rohelise kujundusega */
++.jaljeriba {
++    font-family: Verdana, sans-serif;
++    font-variant: small-caps;
++    font-size: 15px;
++    text-align: left;
++    background-color: #e8f5e9;
++    border-left: 6px solid green;
++    border-bottom: 2px solid darkgreen;
++    border-radius: 4px;
++    margin: 5px;
++    padding: 8px 14px;
++}
++
++/* Klassid, mida jQuery lisab addClass() meetodiga */
++.ul_kujundus {
++    list-style: none;
++    margin: 0;
++    padding: 0;
++    display: inline;
++}
++.li_kujundus {
++    display: inline;
++}
++/* eraldaja iga alamtaseme ees (› nool) */
++.li_kujundus::before {
++    content: "\203A";
++    color: darkgreen;
++    font-weight: bold;
++    margin: 0 8px;
++}
++.jaljeriba li {
++    display: inline;
++}
++
++/* lingid */
++.jaljeriba a {
++    color: darkgreen;
++    text-decoration: none;
++    padding: 2px 6px;
++    border-radius: 4px;
++    transition: background-color 0.2s, color 0.2s;
++}
++/* jQuery hover() lisab selle klassi */
++.jaljeriba a.hover {
++    background-color: green;
++    color: white;
++}
++/* esimene lüli – Kodu */
++.jaljeriba .esimene > a::before {
++    content: "\2302  ";
++}
++/* praegune leht – viimane lüli, ei ole link */
++.jaljeriba .praegune > span {
++    color: black;
++    font-weight: bold;
++    padding: 2px 6px;
++}
+diff --git a/Kujundus1/jaljeriba.js b/Kujundus1/jaljeriba.js
+new file mode 100644
+index 0000000..078b5c1
+--- /dev/null
++++ b/Kujundus1/jaljeriba.js
+@@ -0,0 +1,19 @@
++// Jäljeriba (Breadcrumb) menüü jQuery abil
++// HTML-is on pesastatud loend: Kodu > Tehtud tööd > praegune leht
++$(function () {
++    // loendid muudetakse reaks (nagu Metsheina näites)
++    $('#menyy, #menyy ul').addClass('ul_kujundus');
++    // alamtasemete ette tuleb eraldaja
++    $('#menyy ul li').addClass('li_kujundus');
++
++    // esimene lüli on Kodu, viimane on leht, kus kasutaja praegu on
++    $('#menyy li').first().addClass('esimene');
++    $('#menyy li').last().addClass('praegune');
++
++    // hover-efekt linkidel
++    $('#menyy a').hover(function () {
++        $(this).addClass('hover');
++    }, function () {
++        $(this).removeClass('hover');
++    });
++});
+diff --git a/Kujundus1/lingid.html b/Kujundus1/lingid.html
+index 7bebeb0..6478ca9 100644
+--- a/Kujundus1/lingid.html
++++ b/Kujundus1/lingid.html
+@@ -5,6 +5,9 @@
+   <meta charset="UTF-8">
+   <title>Konstantin veebirakenduste aluste tööd</title>
+   <link rel="stylesheet" href="style.css">
++    <link rel="stylesheet" href="jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="jaljeriba.js" defer></script>
+ </head>
+ <body>
+ <!--veebilehe sisu-->
+@@ -33,6 +36,16 @@
+     </li>
+   </ul>
+ </nav>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="index.html">Kodu</a>
++        <ul>
++            <li><span>Kasulikud lingid</span></li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <!--põhisisu-->
+ <main>
+   <section id = "Kast5">
+diff --git a/Kujundus1/meedia.html b/Kujundus1/meedia.html
+index e9163f3..fa1af6b 100644
+--- a/Kujundus1/meedia.html
++++ b/Kujundus1/meedia.html
+@@ -6,6 +6,9 @@
+     <meta name="author" content="Konstantin">
+     <title>Meedia | Konstantin veebirakenduste aluste tööd</title>
+     <link rel="stylesheet" href="style.css">
++    <link rel="stylesheet" href="jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="jaljeriba.js" defer></script>
+ </head>
+ <body>
+ <!--veebilehe sisu-->
+@@ -33,6 +36,16 @@
+      </li>
+  </ul>
+ </nav>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="index.html">Kodu</a>
++        <ul>
++            <li><span>Meedia</span></li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <!--põhisisu-->
+ <main>
+     <div id="suurkast">
+diff --git a/Kujundus1/tood.html b/Kujundus1/tood.html
+index 7301cb5..a68818e 100644
+--- a/Kujundus1/tood.html
++++ b/Kujundus1/tood.html
+@@ -5,6 +5,9 @@
+     <meta charset="UTF-8">
+     <title>Konstantin veebirakenduste aluste tööd</title>
+     <link rel="stylesheet" href="style.css">
++    <link rel="stylesheet" href="jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="jaljeriba.js" defer></script>
+ </head>
+ <body>
+ <!--veebilehe sisu-->
+@@ -33,6 +36,16 @@
+         </li>
+     </ul>
+ </nav>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="index.html">Kodu</a>
++        <ul>
++            <li><span>Tehtud tööd</span></li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <!--põhisisu-->
+ <main>
+     <section id="Kast7">
+diff --git a/Kujundus1/tutvustus.html b/Kujundus1/tutvustus.html
+index 304edc8..4e44d91 100644
+--- a/Kujundus1/tutvustus.html
++++ b/Kujundus1/tutvustus.html
+@@ -5,6 +5,9 @@
+   <meta charset="UTF-8">
+   <title>Konstantin veebirakenduste aluste tööd</title>
+   <link rel="stylesheet" href="style.css">
++    <link rel="stylesheet" href="jaljeriba.css">
++    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
++    <script src="jaljeriba.js" defer></script>
+ </head>
+ <body>
+ <!--veebilehe sisu-->
+@@ -33,6 +36,16 @@
+     </li>
+   </ul>
+ </nav>
++<!--jäljeriba (breadcrumb) menüü-->
++<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
++<ul id="menyy">
++    <li><a href="index.html">Kodu</a>
++        <ul>
++            <li><span>Tutvustus</span></li>
++        </ul>
++    </li>
++</ul>
++</div>
+ <!--põhisisu-->
+ <main>
+   <section id = "Kast3">

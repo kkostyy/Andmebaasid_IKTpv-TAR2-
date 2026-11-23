@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery kasutamine</title>
+    <link rel="stylesheet" href="jQueryStyle.css">
+
+    <style>
+        #sisu, h2, #pilt {
+            position: relative;
+        }
+        #pilt {
+            display: inline-block;
+            cursor: move;
+        }
+        #pilt img {
+            width: 300px;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+        #sisu {
+            cursor: move;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#kuva').hide();
+
+            $('#peida').on('click', function () {
+                $('#sisu').hide(500);
+                $(this).hide();
+                $('#kuva').show();
+            });
+
+            $('#kuva').on('click', function () {
+                $('#sisu').show(500);
+                $(this).hide();
+                $('#peida').show();
+            });
+
+            $('#paremale').on('click', function () {
+                $('#sisu, h2, #pilt').animate({ left: '500px' }, 1000);
+                $(this).hide();
+                $('#vasakule').show();
+            });
+
+            $('#vasakule').on('click', function () {
+                $('#sisu, h2, #pilt').animate({ left: '0px' }, 1000);
+                $(this).hide();
+                $('#paremale').show();
+            });
+
+            $('#sisu').draggable();
+            $('#pilt').draggable({ drag: xyKoordinaat });
+        });
+
+        function xyKoordinaat(event, ui) {
+            $('#vastus').html(
+                'x: ' + Math.round(ui.offset.left) + ', y: ' + Math.round(ui.offset.top)
+            );
+        }
+    </script>
+    <link rel="stylesheet" href="../../../jaljeriba.css">
+    <script src="../../../jaljeriba.js" defer></script>
+</head>
+<body>
+<header>
+    <h1>jQuery kasutamine</h1>
+</header>
+<!--jäljeriba (breadcrumb) menüü-->
+<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
+<ul id="menyy">
+    <li><a href="../../../index.html">Kodu</a>
+        <ul>
+            <li><a href="../../../tood.html">Tehtud tööd</a>
+                <ul>
+                    <li><span>jQuery kasutamine</span></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+</div>
+<main>
+    <input type="button" value="<---" id="vasakule" style="display: none">
+    <input type="button" value="--->" id="paremale">
+    <input type="button" value="Peida" id="peida">
+    <input type="button" value="Kuva" id="kuva">
+
+    <section>
+        <h2>jQuery File Upload</h2>
+        <div id="sisu">
+            A page can't be manipulated safely until the document is "ready." jQuery detects this state of readiness for you.
+            Code included inside $( document ).ready() will only run once the page Document Object Model (DOM) is ready for
+            JavaScript code to execute. Code included inside $( window ).on( "load", function() { ... }) will run once the
+            entire page (images or iframes), not just the DOM, is ready.
+        </div>
+    </section>
+
+    <section>
+        <div id="vastus"></div>
+        <div id="pilt">
+            <img src="https://i.pinimg.com/736x/ca/99/52/ca9952eef01b83907411bcaba04d0244.jpg"
+                 alt="pilt" draggable="false">
+        </div>
+    </section>
+</main>
+</body>
+</html>
