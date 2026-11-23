@@ -73,7 +73,7 @@
  
 --- a/Kujundus1/style.css
 +++ b/Kujundus1/style.css
-@@ -261,3 +261,16 @@
+@@ -261,3 +261,15 @@
      background-color: darkgreen;
      color: white;
  }
@@ -88,5 +88,4 @@
 +    color: white;
 +    font-family: Verdana, sans-serif;
 +    font-size: 13px;
-+    border-radius: 5px;
 +}
