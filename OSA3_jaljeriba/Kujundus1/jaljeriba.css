@@ -111,3 +111,20 @@
     border-left: 4px solid green;
     background: #e8f5e9;
 }
+
+/************ Vihjemull (tooltip) jäljeribal *****************/
+#vihje {
+    position: absolute;
+    z-index: 2000;
+    max-width: 260px;
+    padding: 8px 12px;
+    background-color: darkgreen;
+    color: #ffffff;
+    border: 2px solid #a5d6a7;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-family: Verdana, sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+    pointer-events: none;   /* ei sega hiirt */
+}
