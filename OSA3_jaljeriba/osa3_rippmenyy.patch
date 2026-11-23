@@ -1,5 +1,5 @@
 diff --git a/Kujundus1/index.html b/Kujundus1/index.html
-index f136bcb..e26b5fa 100644
+index f136bcb..ccc7542 100644
 --- a/Kujundus1/index.html
 +++ b/Kujundus1/index.html
 @@ -62,6 +62,8 @@
@@ -11,35 +11,30 @@ index f136bcb..e26b5fa 100644
  </head>
  <body>
  <!--veebilehe sisu-->
-@@ -85,8 +87,25 @@
+@@ -85,12 +87,18 @@
          <li>
              <a href="lingid.html">Kasulikud lingid</a>
          </li>
 -        <li>
-+        <li class="ripp">
-             <a href="tood.html">Tehtud tööd</a>
-+            <!--rippmenüü kõigi tehtud töödega-->
-+            <ul class="alammenyy">
-+                <li><a href="../Kujundus2/index.html">Teine veebilehe kujundus</a></li>
-+                <li><a href="Tood/Vormid/Tabelid/tabelid.html">Tabelid</a></li>
-+                <li><a href="Tood/Vormid/IseseisvadTabelid/iseseisvadTabel.html">Iseseisvad tabelid</a></li>
-+                <li><a href="Tood/Vormid/Maparea/maparea.html">Map area pilt</a></li>
-+                <li><a href="Tood/Vormid/Kysimustik/kysimustik.html">Muusika küsimustik</a></li>
-+                <li><a href="Tood/Vormid/LehtToo/lehtToo.html">LehtToo</a></li>
-+                <li><a href="Tood/Vormid/PiltideVahetus/piltideVahetus.html">Piltide vahetus</a></li>
-+                <li><a href="Tood/Vormid/ProgrKysimustik/progrKysimustik.html">Programmeerimise küsimustik</a></li>
-+                <li><a href="Tood/Vormid/Objektid ja meetodid/Obj_met.html">Objektid ja meetodid</a></li>
-+                <li><a href="Tood/Vormid/Raamatukogu/raamatukogu.html">Raamat ja raamatukogu</a></li>
-+                <li><a href="Tood/Vormid/Kalkulaatorid/Kalkulaatorid.html">Kalkulaatorid</a></li>
-+                <li><a href="Tood/Vormid/KuupevaFunktsioon/kuupevaFunktsioon.html">Kuupäeva funktsioonid</a></li>
-+                <li><a href="Tood/Vormid/jQuery/jQuery.html">jQuery kasutamine</a></li>
-+                <li><a href="Tood/Vormid/Kysimustik_jQuery/kysimustik.html">Muusika küsimustik (jQuery valideerimine)</a></li>
-+            </ul>
-         </li>
+-            <a href="tood.html">Tehtud tööd</a>
+-        </li>
          <li>
              <a href="meedia.html">Meedia</a>
+         </li>
++        <li class="ripp">
++            <a href="tood.html">Tehtud tööd</a>
++            <!--alammenüü kolme parima tööga-->
++            <ul class="alammenyy">
++                <li><a href="Tood/Vormid/Maparea/maparea.html">Map area pilt</a></li>
++                <li><a href="Tood/Vormid/PiltideVahetus/piltideVahetus.html">Piltide vahetus</a></li>
++                <li><a href="Tood/Vormid/Kysimustik_jQuery/kysimustik.html">Muusika küsimustik (jQuery valideerimine)</a></li>
++            </ul>
++        </li>
+     </ul>
+ </nav>
+ <!--põhisisu-->
 diff --git a/Kujundus1/lingid.html b/Kujundus1/lingid.html
-index 7bebeb0..500396a 100644
+index 7bebeb0..825b1b9 100644
 --- a/Kujundus1/lingid.html
 +++ b/Kujundus1/lingid.html
 @@ -5,6 +5,9 @@
@@ -52,35 +47,30 @@ index 7bebeb0..500396a 100644
  </head>
  <body>
  <!--veebilehe sisu-->
-@@ -25,8 +28,25 @@
+@@ -25,12 +28,18 @@
      <li>
        <a href="lingid.html">Kasulikud lingid</a>
      </li>
 -    <li>
-+    <li class="ripp">
-       <a href="tood.html">Tehtud tööd</a>
-+      <!--rippmenüü kõigi tehtud töödega-->
-+      <ul class="alammenyy">
-+          <li><a href="../Kujundus2/index.html">Teine veebilehe kujundus</a></li>
-+          <li><a href="Tood/Vormid/Tabelid/tabelid.html">Tabelid</a></li>
-+          <li><a href="Tood/Vormid/IseseisvadTabelid/iseseisvadTabel.html">Iseseisvad tabelid</a></li>
-+          <li><a href="Tood/Vormid/Maparea/maparea.html">Map area pilt</a></li>
-+          <li><a href="Tood/Vormid/Kysimustik/kysimustik.html">Muusika küsimustik</a></li>
-+          <li><a href="Tood/Vormid/LehtToo/lehtToo.html">LehtToo</a></li>
-+          <li><a href="Tood/Vormid/PiltideVahetus/piltideVahetus.html">Piltide vahetus</a></li>
-+          <li><a href="Tood/Vormid/ProgrKysimustik/progrKysimustik.html">Programmeerimise küsimustik</a></li>
-+          <li><a href="Tood/Vormid/Objektid ja meetodid/Obj_met.html">Objektid ja meetodid</a></li>
-+          <li><a href="Tood/Vormid/Raamatukogu/raamatukogu.html">Raamat ja raamatukogu</a></li>
-+          <li><a href="Tood/Vormid/Kalkulaatorid/Kalkulaatorid.html">Kalkulaatorid</a></li>
-+          <li><a href="Tood/Vormid/KuupevaFunktsioon/kuupevaFunktsioon.html">Kuupäeva funktsioonid</a></li>
-+          <li><a href="Tood/Vormid/jQuery/jQuery.html">jQuery kasutamine</a></li>
-+          <li><a href="Tood/Vormid/Kysimustik_jQuery/kysimustik.html">Muusika küsimustik (jQuery valideerimine)</a></li>
-+      </ul>
-     </li>
+-      <a href="tood.html">Tehtud tööd</a>
+-    </li>
      <li>
        <a href="meedia.html">Meedia</a>
+     </li>
++    <li class="ripp">
++      <a href="tood.html">Tehtud tööd</a>
++      <!--alammenüü kolme parima tööga-->
++      <ul class="alammenyy">
++          <li><a href="Tood/Vormid/Maparea/maparea.html">Map area pilt</a></li>
++          <li><a href="Tood/Vormid/PiltideVahetus/piltideVahetus.html">Piltide vahetus</a></li>
++          <li><a href="Tood/Vormid/Kysimustik_jQuery/kysimustik.html">Muusika küsimustik (jQuery valideerimine)</a></li>
++      </ul>
++    </li>
+   </ul>
+ </nav>
+ <!--põhisisu-->
 diff --git a/Kujundus1/meedia.html b/Kujundus1/meedia.html
-index e9163f3..0a23486 100644
+index e9163f3..f4a3d0e 100644
 --- a/Kujundus1/meedia.html
 +++ b/Kujundus1/meedia.html
 @@ -6,6 +6,9 @@
@@ -93,127 +83,88 @@ index e9163f3..0a23486 100644
  </head>
  <body>
  <!--veebilehe sisu-->
-@@ -25,8 +28,25 @@
+@@ -25,12 +28,18 @@
       <li>
           <a href="lingid.html">Kasulikud lingid</a>
       </li>
 -     <li>
-+     <li class="ripp">
-          <a href="tood.html">Tehtud tööd</a>
-+         <!--rippmenüü kõigi tehtud töödega-->
-+         <ul class="alammenyy">
-+             <li><a href="../Kujundus2/index.html">Teine veebilehe kujundus</a></li>
-+             <li><a href="Tood/Vormid/Tabelid/tabelid.html">Tabelid</a></li>
-+             <li><a href="Tood/Vormid/IseseisvadTabelid/iseseisvadTabel.html">Iseseisvad tabelid</a></li>
-+             <li><a href="Tood/Vormid/Maparea/maparea.html">Map area pilt</a></li>
-+             <li><a href="Tood/Vormid/Kysimustik/kysimustik.html">Muusika küsimustik</a></li>
-+             <li><a href="Tood/Vormid/LehtToo/lehtToo.html">LehtToo</a></li>
-+             <li><a href="Tood/Vormid/PiltideVahetus/piltideVahetus.html">Piltide vahetus</a></li>
-+             <li><a href="Tood/Vormid/ProgrKysimustik/progrKysimustik.html">Programmeerimise küsimustik</a></li>
-+             <li><a href="Tood/Vormid/Objektid ja meetodid/Obj_met.html">Objektid ja meetodid</a></li>
-+             <li><a href="Tood/Vormid/Raamatukogu/raamatukogu.html">Raamat ja raamatukogu</a></li>
-+             <li><a href="Tood/Vormid/Kalkulaatorid/Kalkulaatorid.html">Kalkulaatorid</a></li>
-+             <li><a href="Tood/Vormid/KuupevaFunktsioon/kuupevaFunktsioon.html">Kuupäeva funktsioonid</a></li>
-+             <li><a href="Tood/Vormid/jQuery/jQuery.html">jQuery kasutamine</a></li>
-+             <li><a href="Tood/Vormid/Kysimustik_jQuery/kysimustik.html">Muusika küsimustik (jQuery valideerimine)</a></li>
-+         </ul>
-      </li>
+-         <a href="tood.html">Tehtud tööd</a>
+-     </li>
       <li>
           <a href="meedia.html">Meedia</a>
+      </li>
++     <li class="ripp">
++         <a href="tood.html">Tehtud tööd</a>
++         <!--alammenüü kolme parima tööga-->
++         <ul class="alammenyy">
++             <li><a href="Tood/Vormid/Maparea/maparea.html">Map area pilt</a></li>
++             <li><a href="Tood/Vormid/PiltideVahetus/piltideVahetus.html">Piltide vahetus</a></li>
++             <li><a href="Tood/Vormid/Kysimustik_jQuery/kysimustik.html">Muusika küsimustik (jQuery valideerimine)</a></li>
++         </ul>
++     </li>
+  </ul>
+ </nav>
+ <!--põhisisu-->
 diff --git a/Kujundus1/rippmenyy.css b/Kujundus1/rippmenyy.css
 new file mode 100644
-index 0000000..ae5494c
+index 0000000..3f4fdc6
 --- /dev/null
 +++ b/Kujundus1/rippmenyy.css
-@@ -0,0 +1,57 @@
-+/************ RIPPMENÜÜ "Tehtud tööd" peamenüüs *****************/
-+/* et rippmenüü ei jääks peidetuks */
-+nav > ul {
+@@ -0,0 +1,37 @@
++/************ ALAMMENÜÜ "Tehtud tööd" (Metsheina hover-menüü näite järgi) *****************/
++/* "Tehtud tööd" plokk on 200px lai, alammenüü on alati avatud */
++nav ul li.ripp {
++    width: 200px;
++}
++nav ul li.ripp > a {
++    border-bottom: 1px solid #fff;
++}
++nav ul.alammenyy {
++    display: block;
++    list-style-type: none;
++    width: 180px;
++    margin: 0;
++    padding: 0 0 0 20px;     /* alammenüü on veidi taandega */
++    background: none;
 +    overflow: visible;
 +}
-+nav > ul > li {
-+    position: relative;
-+}
-+/* nool "Tehtud tööd" lingi järel */
-+nav > ul > li.ripp > a::after {
-+    content: " \25BE";
-+}
-+
-+/* alammenüü – peidus, jQuery näitab seda slideDown() abil */
-+nav ul.alammenyy {
-+    display: none;
-+    position: absolute;
-+    top: 100%;
-+    left: 0;
-+    z-index: 1000;
-+    min-width: 300px;
-+    flex-direction: column;
-+    flex-wrap: nowrap;
-+    background-color: green;
-+    border: 2px solid darkgreen;
-+    border-top: 5px solid darkgreen;
-+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-+    text-align: left;
-+}
 +nav ul.alammenyy li {
++    display: inline;
 +    float: none;
-+    display: block;
 +}
 +nav ul.alammenyy li a {
++    display: block;
 +    border: none;
-+    border-bottom: 1px solid darkgreen;
-+    padding: 8px 14px;
++    border-bottom: 1px solid #fff;
++    text-decoration: none;
++    background: green;
++    color: #fff;
++    padding: 0.3em;
 +    text-align: left;
-+    white-space: nowrap;
 +}
 +/* jQuery hover() lisab selle klassi */
-+nav ul li a.hover {
-+    background-color: darkgreen;
-+    color: white;
-+}
-+
-+/* Mobiilivaade: menüü kitsam ja pikad nimed murduvad */
-+@media (max-width: 640px) {
-+    nav ul.alammenyy {
-+        min-width: 220px;
-+        left: auto;
-+        right: 0;
-+    }
-+    nav ul.alammenyy li a {
-+        white-space: normal;
-+    }
++nav a.hover,
++nav ul.alammenyy li a.hover {
++    background: #3C9;
++    font-weight: 700;
 +}
 diff --git a/Kujundus1/rippmenyy.js b/Kujundus1/rippmenyy.js
 new file mode 100644
-index 0000000..4a9ac6e
+index 0000000..a1f105f
 --- /dev/null
 +++ b/Kujundus1/rippmenyy.js
-@@ -0,0 +1,23 @@
-+// Rippmenüü "Tehtud tööd" peamenüüs jQuery abil
-+
+@@ -0,0 +1,9 @@
++// "Tehtud tööd" alammenüü hover-efekt jQuery abil (Metsheina näite järgi)
 +$(function () {
-+    var $ripp = $('nav li.ripp');
-+    var $alammenyy = $ripp.children('ul.alammenyy');
-+
-+    // alammenüü on alguses peidus
-+    $alammenyy.hide();
-+
-+    // hiir "Tehtud tööd" peale -> menüü libiseb alla, hiir ära -> üles
-+    $ripp.hover(function () {
-+        $alammenyy.stop(true, true).slideDown(250);
-+    }, function () {
-+        $alammenyy.stop(true, true).slideUp(200);
-+    });
-+
-+    // hover-efekt kõigil menüü linkidel
-+    $('nav a').hover(function () {
++    $('nav a').hover(function (event) {
 +        $(this).addClass('hover');
-+    }, function () {
++    },
++    function () {
 +        $(this).removeClass('hover');
 +    });
 +});
 diff --git a/Kujundus1/tood.html b/Kujundus1/tood.html
-index 7301cb5..1711d6e 100644
+index 7301cb5..1a00915 100644
 --- a/Kujundus1/tood.html
 +++ b/Kujundus1/tood.html
 @@ -5,6 +5,9 @@
@@ -226,35 +177,30 @@ index 7301cb5..1711d6e 100644
  </head>
  <body>
  <!--veebilehe sisu-->
-@@ -25,8 +28,25 @@
+@@ -25,12 +28,18 @@
          <li>
              <a href="lingid.html">Kasulikud lingid</a>
          </li>
 -        <li>
-+        <li class="ripp">
-             <a href="tood.html">Tehtud tööd</a>
-+            <!--rippmenüü kõigi tehtud töödega-->
-+            <ul class="alammenyy">
-+                <li><a href="../Kujundus2/index.html">Teine veebilehe kujundus</a></li>
-+                <li><a href="Tood/Vormid/Tabelid/tabelid.html">Tabelid</a></li>
-+                <li><a href="Tood/Vormid/IseseisvadTabelid/iseseisvadTabel.html">Iseseisvad tabelid</a></li>
-+                <li><a href="Tood/Vormid/Maparea/maparea.html">Map area pilt</a></li>
-+                <li><a href="Tood/Vormid/Kysimustik/kysimustik.html">Muusika küsimustik</a></li>
-+                <li><a href="Tood/Vormid/LehtToo/lehtToo.html">LehtToo</a></li>
-+                <li><a href="Tood/Vormid/PiltideVahetus/piltideVahetus.html">Piltide vahetus</a></li>
-+                <li><a href="Tood/Vormid/ProgrKysimustik/progrKysimustik.html">Programmeerimise küsimustik</a></li>
-+                <li><a href="Tood/Vormid/Objektid ja meetodid/Obj_met.html">Objektid ja meetodid</a></li>
-+                <li><a href="Tood/Vormid/Raamatukogu/raamatukogu.html">Raamat ja raamatukogu</a></li>
-+                <li><a href="Tood/Vormid/Kalkulaatorid/Kalkulaatorid.html">Kalkulaatorid</a></li>
-+                <li><a href="Tood/Vormid/KuupevaFunktsioon/kuupevaFunktsioon.html">Kuupäeva funktsioonid</a></li>
-+                <li><a href="Tood/Vormid/jQuery/jQuery.html">jQuery kasutamine</a></li>
-+                <li><a href="Tood/Vormid/Kysimustik_jQuery/kysimustik.html">Muusika küsimustik (jQuery valideerimine)</a></li>
-+            </ul>
-         </li>
+-            <a href="tood.html">Tehtud tööd</a>
+-        </li>
          <li>
              <a href="meedia.html">Meedia</a>
+         </li>
++        <li class="ripp">
++            <a href="tood.html">Tehtud tööd</a>
++            <!--alammenüü kolme parima tööga-->
++            <ul class="alammenyy">
++                <li><a href="Tood/Vormid/Maparea/maparea.html">Map area pilt</a></li>
++                <li><a href="Tood/Vormid/PiltideVahetus/piltideVahetus.html">Piltide vahetus</a></li>
++                <li><a href="Tood/Vormid/Kysimustik_jQuery/kysimustik.html">Muusika küsimustik (jQuery valideerimine)</a></li>
++            </ul>
++        </li>
+     </ul>
+ </nav>
+ <!--põhisisu-->
 diff --git a/Kujundus1/tutvustus.html b/Kujundus1/tutvustus.html
-index 304edc8..33501c8 100644
+index 304edc8..f72bd3c 100644
 --- a/Kujundus1/tutvustus.html
 +++ b/Kujundus1/tutvustus.html
 @@ -5,6 +5,9 @@
@@ -267,30 +213,25 @@ index 304edc8..33501c8 100644
  </head>
  <body>
  <!--veebilehe sisu-->
-@@ -25,8 +28,25 @@
+@@ -25,12 +28,18 @@
      <li>
        <a href="lingid.html">Kasulikud lingid</a>
      </li>
 -    <li>
-+    <li class="ripp">
-       <a href="tood.html">Tehtud tööd</a>
-+      <!--rippmenüü kõigi tehtud töödega-->
-+      <ul class="alammenyy">
-+          <li><a href="../Kujundus2/index.html">Teine veebilehe kujundus</a></li>
-+          <li><a href="Tood/Vormid/Tabelid/tabelid.html">Tabelid</a></li>
-+          <li><a href="Tood/Vormid/IseseisvadTabelid/iseseisvadTabel.html">Iseseisvad tabelid</a></li>
-+          <li><a href="Tood/Vormid/Maparea/maparea.html">Map area pilt</a></li>
-+          <li><a href="Tood/Vormid/Kysimustik/kysimustik.html">Muusika küsimustik</a></li>
-+          <li><a href="Tood/Vormid/LehtToo/lehtToo.html">LehtToo</a></li>
-+          <li><a href="Tood/Vormid/PiltideVahetus/piltideVahetus.html">Piltide vahetus</a></li>
-+          <li><a href="Tood/Vormid/ProgrKysimustik/progrKysimustik.html">Programmeerimise küsimustik</a></li>
-+          <li><a href="Tood/Vormid/Objektid ja meetodid/Obj_met.html">Objektid ja meetodid</a></li>
-+          <li><a href="Tood/Vormid/Raamatukogu/raamatukogu.html">Raamat ja raamatukogu</a></li>
-+          <li><a href="Tood/Vormid/Kalkulaatorid/Kalkulaatorid.html">Kalkulaatorid</a></li>
-+          <li><a href="Tood/Vormid/KuupevaFunktsioon/kuupevaFunktsioon.html">Kuupäeva funktsioonid</a></li>
-+          <li><a href="Tood/Vormid/jQuery/jQuery.html">jQuery kasutamine</a></li>
-+          <li><a href="Tood/Vormid/Kysimustik_jQuery/kysimustik.html">Muusika küsimustik (jQuery valideerimine)</a></li>
-+      </ul>
-     </li>
+-      <a href="tood.html">Tehtud tööd</a>
+-    </li>
      <li>
        <a href="meedia.html">Meedia</a>
+     </li>
++    <li class="ripp">
++      <a href="tood.html">Tehtud tööd</a>
++      <!--alammenüü kolme parima tööga-->
++      <ul class="alammenyy">
++          <li><a href="Tood/Vormid/Maparea/maparea.html">Map area pilt</a></li>
++          <li><a href="Tood/Vormid/PiltideVahetus/piltideVahetus.html">Piltide vahetus</a></li>
++          <li><a href="Tood/Vormid/Kysimustik_jQuery/kysimustik.html">Muusika küsimustik (jQuery valideerimine)</a></li>
++      </ul>
++    </li>
+   </ul>
+ </nav>
+ <!--põhisisu-->

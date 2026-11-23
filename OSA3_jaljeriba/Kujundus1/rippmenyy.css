@@ -1,57 +1,37 @@
-/************ RIPPMENÜÜ "Tehtud tööd" peamenüüs *****************/
-/* et rippmenüü ei jääks peidetuks */
-nav > ul {
+/************ ALAMMENÜÜ "Tehtud tööd" (Metsheina hover-menüü näite järgi) *****************/
+/* "Tehtud tööd" plokk on 200px lai, alammenüü on alati avatud */
+nav ul li.ripp {
+    width: 200px;
+}
+nav ul li.ripp > a {
+    border-bottom: 1px solid #fff;
+}
+nav ul.alammenyy {
+    display: block;
+    list-style-type: none;
+    width: 180px;
+    margin: 0;
+    padding: 0 0 0 20px;     /* alammenüü on veidi taandega */
+    background: none;
     overflow: visible;
 }
-nav > ul > li {
-    position: relative;
-}
-/* nool "Tehtud tööd" lingi järel */
-nav > ul > li.ripp > a::after {
-    content: " \25BE";
-}
-
-/* alammenüü – peidus, jQuery näitab seda slideDown() abil */
-nav ul.alammenyy {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    min-width: 300px;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    background-color: green;
-    border: 2px solid darkgreen;
-    border-top: 5px solid darkgreen;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    text-align: left;
-}
 nav ul.alammenyy li {
+    display: inline;
     float: none;
-    display: block;
 }
 nav ul.alammenyy li a {
+    display: block;
     border: none;
-    border-bottom: 1px solid darkgreen;
-    padding: 8px 14px;
+    border-bottom: 1px solid #fff;
+    text-decoration: none;
+    background: green;
+    color: #fff;
+    padding: 0.3em;
     text-align: left;
-    white-space: nowrap;
 }
 /* jQuery hover() lisab selle klassi */
-nav ul li a.hover {
-    background-color: darkgreen;
-    color: white;
-}
-
-/* Mobiilivaade: menüü kitsam ja pikad nimed murduvad */
-@media (max-width: 640px) {
-    nav ul.alammenyy {
-        min-width: 220px;
-        left: auto;
-        right: 0;
-    }
-    nav ul.alammenyy li a {
-        white-space: normal;
-    }
+nav a.hover,
+nav ul.alammenyy li a.hover {
+    background: #3C9;
+    font-weight: 700;
 }
