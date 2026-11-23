@@ -666,10 +666,10 @@ index f136bcb..e165fc8 100644
      <input type="button" value="<---" id="vasakule" style="display: none">
 diff --git a/Kujundus1/jaljeriba.css b/Kujundus1/jaljeriba.css
 new file mode 100644
-index 0000000..f99e5bf
+index 0000000..51a1fec
 --- /dev/null
 +++ b/Kujundus1/jaljeriba.css
-@@ -0,0 +1,59 @@
+@@ -0,0 +1,113 @@
 +/************ JÄLJERIBA (Breadcrumb) menüü *****************/
 +/* Kast, milles jäljeriba asub – sobib lehe rohelise kujundusega */
 +.jaljeriba {
@@ -729,14 +729,87 @@ index 0000000..f99e5bf
 +    font-weight: bold;
 +    padding: 2px 6px;
 +}
++
++/************ Rippmenüü "Tehtud tööd" lülil *****************/
++.ripp-ymbris {
++    position: relative;
++    display: inline-block;
++}
++.ripp-nupp {
++    background: green;
++    color: white;
++    border: 1px solid darkgreen;
++    border-radius: 4px;
++    margin-left: 4px;
++    padding: 0 6px;
++    font-size: 13px;
++    line-height: 18px;
++    cursor: pointer;
++    transition: transform 0.25s;
++}
++.ripp-nupp:hover {
++    background: darkgreen;
++}
++.ripp-nupp.avatud {
++    transform: rotate(180deg);
++}
++.jaljeriba .rippmenyy {
++    position: absolute;
++    top: 100%;
++    left: 0;
++    z-index: 1000;
++    min-width: 280px;
++    margin: 6px 0 0;
++    padding: 4px 0;
++    list-style: none;
++    background: #ffffff;
++    border: 2px solid darkgreen;
++    border-top: 5px solid green;
++    border-radius: 4px;
++    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
++    text-align: left;
++}
++.jaljeriba .rippmenyy li {
++    display: block;
++}
++.jaljeriba .rippmenyy a {
++    display: block;
++    padding: 6px 12px;
++    border-radius: 0;
++    white-space: nowrap;
++}
++.jaljeriba .rippmenyy a.aktiivne {
++    font-weight: bold;
++    border-left: 4px solid green;
++    background: #e8f5e9;
++}
 diff --git a/Kujundus1/jaljeriba.js b/Kujundus1/jaljeriba.js
 new file mode 100644
-index 0000000..078b5c1
+index 0000000..d78ccef
 --- /dev/null
 +++ b/Kujundus1/jaljeriba.js
-@@ -0,0 +1,19 @@
+@@ -0,0 +1,99 @@
 +// Jäljeriba (Breadcrumb) menüü jQuery abil
 +// HTML-is on pesastatud loend: Kodu > Tehtud tööd > praegune leht
++
++// Kõik tehtud tööd rippmenüü jaoks (teed on Kujundus1 kausta suhtes)
++var tehtudTood = [
++    ['Teine veebilehe kujundus', '../Kujundus2/index.html'],
++    ['Tabelid', 'Tood/Vormid/Tabelid/tabelid.html'],
++    ['Iseseisvad tabelid', 'Tood/Vormid/IseseisvadTabelid/iseseisvadTabel.html'],
++    ['Map area pilt', 'Tood/Vormid/Maparea/maparea.html'],
++    ['Muusika küsimustik', 'Tood/Vormid/Kysimustik/kysimustik.html'],
++    ['LehtToo', 'Tood/Vormid/LehtToo/lehtToo.html'],
++    ['Piltide vahetus', 'Tood/Vormid/PiltideVahetus/piltideVahetus.html'],
++    ['Programmeerimise küsimustik', 'Tood/Vormid/ProgrKysimustik/progrKysimustik.html'],
++    ['Objektid ja meetodid', 'Tood/Vormid/Objektid ja meetodid/Obj_met.html'],
++    ['Raamat ja raamatukogu', 'Tood/Vormid/Raamatukogu/raamatukogu.html'],
++    ['Kalkulaatorid', 'Tood/Vormid/Kalkulaatorid/Kalkulaatorid.html'],
++    ['Kuupäeva funktsioonid', 'Tood/Vormid/KuupevaFunktsioon/kuupevaFunktsioon.html'],
++    ['jQuery kasutamine', 'Tood/Vormid/jQuery/jQuery.html'],
++    ['Muusika küsimustik (jQuery valideerimine)', 'Tood/Vormid/Kysimustik_jQuery/kysimustik.html']
++];
++
 +$(function () {
 +    // loendid muudetakse reaks (nagu Metsheina näites)
 +    $('#menyy, #menyy ul').addClass('ul_kujundus');
@@ -753,7 +826,68 @@ index 0000000..078b5c1
 +    }, function () {
 +        $(this).removeClass('hover');
 +    });
++
++    looRippmenyy();
 +});
++
++// Rippmenüü "Tehtud tööd" lüli juurde
++function looRippmenyy() {
++    // juurkausta tee saadakse Kodu lingist, nt "../../../index.html" -> "../../../"
++    var kodu = $('#menyy .esimene > a').attr('href');
++    if (!kodu) return;               // avalehel pole Kodu linki ega "Tehtud tööd" lüli
++    var juur = kodu.replace('index.html', '');
++
++    // "Tehtud tööd" lüli: link (alamlehtedel) või tekst (tood.html lehel)
++    var $lyli = $('#menyy li > a[href$="tood.html"], #menyy li > span').filter(function () {
++        return $.trim($(this).text()) === 'Tehtud tööd';
++    }).first();
++    if ($lyli.length === 0) return;   // nt avalehel pole seda lüli
++
++    var $nupp = $('<button type="button" class="ripp-nupp" title="Näita kõiki töid">&#9662;</button>');
++    var $loend = $('<ul class="rippmenyy"></ul>');
++    var praeguneLeht = decodeURIComponent(location.pathname);
++
++    $.each(tehtudTood, function (i, too) {
++        var $a = $('<a></a>').attr('href', juur + too[1]).text(too[0]);
++        // praegune töö märgitakse ära
++        if (praeguneLeht.indexOf(too[1].replace('../', '')) !== -1) {
++            $a.addClass('aktiivne');
++        }
++        $loend.append($('<li></li>').append($a));
++    });
++
++    // lüli, nupp ja loend pannakse ühte ümbrisesse
++    $lyli.wrap('<span class="ripp-ymbris"></span>');
++    $lyli.after($nupp, $loend);
++    $loend.hide();
++
++    // klikk noolel: rippmenüü avaneb/sulgub animatsiooniga
++    $nupp.on('click', function (e) {
++        e.stopPropagation();
++        if ($loend.is(':visible')) {
++            $loend.slideUp(250);
++            $nupp.removeClass('avatud');
++        } else {
++            $loend.slideDown(250);
++            $nupp.addClass('avatud');
++        }
++    });
++
++    // klikk mujal lehel sulgeb menüü
++    $(document).on('click', function (e) {
++        if (!$(e.target).closest('.ripp-ymbris').length) {
++            $loend.slideUp(250);
++            $nupp.removeClass('avatud');
++        }
++    });
++
++    // hover-efekt rippmenüü linkidel
++    $loend.find('a').hover(function () {
++        $(this).addClass('hover');
++    }, function () {
++        $(this).removeClass('hover');
++    });
++}
 diff --git a/Kujundus1/lingid.html b/Kujundus1/lingid.html
 index 7bebeb0..6478ca9 100644
 --- a/Kujundus1/lingid.html
