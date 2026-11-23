@@ -1,49 +1,54 @@
 --- a/Kujundus1/index.html
 +++ b/Kujundus1/index.html
-@@ -59,6 +59,21 @@
+@@ -59,6 +59,26 @@
                  $(this).css('color', 'black').fadeTo(300, 1);
              });
  
-+            // vihjemullid
-+            $('[title]').hover(function (e) {
-+                var tekst = $(this).attr('title');
-+                $(this).data('tekst', tekst).removeAttr('title');
-+                $('<div class="vihje"></div>').text(tekst).appendTo('body')
-+                    .css({ left: e.pageX + 10, top: e.pageY + 15 }).fadeIn(300);
-+            }, function () {
-+                $(this).attr('title', $(this).data('tekst'));
-+                $('.vihje').fadeOut(200, function () {
++            // vihjemullid (Metsheina näite järgi)
++            $('.vihjemull').mouseover(function (e) {
++                var mull = $(this).attr('title');
++                $(this).attr('title', '');
++                $('#vihje').remove();
++                $('body').append('<div id="vihje">' + mull + '</div>');
++                $('#vihje').css('top', e.pageY + 10);
++                $('#vihje').css('left', e.pageX + 20);
++                $('#vihje').fadeIn(500);
++                $('#vihje').fadeTo(10, 0.9);
++            }).mousemove(function (e) {
++                $('#vihje').css('top', e.pageY + 10);
++                $('#vihje').css('left', e.pageX + 20);
++            }).mouseout(function () {
++                $(this).attr('title', $('#vihje').html());
++                $('#vihje').stop(true).fadeOut(300, function () {
 +                    $(this).remove();
 +                });
-+            }).mousemove(function (e) {
-+                $('.vihje').css({ left: e.pageX + 10, top: e.pageY + 15 });
 +            });
 +
              $('.sisu').draggable();
              $('.pilt').draggable({ drag: xyKoordinaat });
          });
-@@ -84,16 +99,16 @@
+@@ -84,16 +104,16 @@
  <nav>
      <ul>
          <li>
 -            <a href="index.html">Kodu</a>
-+            <a href="index.html" title="Avaleht, sa oled praegu siin">Kodu</a>
++            <a href="index.html" class="vihjemull" title="Avaleht, sa oled praegu siin">Kodu</a>
          </li>
          <li>
 -            <a href="tutvustus.html">Tutvustus</a>
-+            <a href="tutvustus.html" title="Natuke minust">Tutvustus</a>
++            <a href="tutvustus.html" class="vihjemull" title="Natuke minust">Tutvustus</a>
          </li>
          <li>
 -            <a href="lingid.html">Kasulikud lingid</a>
-+            <a href="lingid.html" title="Lingid mis aitavad kodulehte teha">Kasulikud lingid</a>
++            <a href="lingid.html" class="vihjemull" title="Lingid mis aitavad kodulehte teha">Kasulikud lingid</a>
          </li>
          <li>
 -            <a href="meedia.html">Meedia</a>
-+            <a href="meedia.html" title="Pildid, video, kaart ja muusika">Meedia</a>
++            <a href="meedia.html" class="vihjemull" title="Pildid, video, kaart ja muusika">Meedia</a>
          </li>
          <li class="ripp">
              <a href="tood.html">Tehtud tööd</a>
-@@ -108,12 +123,12 @@
+@@ -108,12 +128,12 @@
  </nav>
  <!--põhisisu-->
  <main>
@@ -53,39 +58,40 @@
 -    <input type="button" value="Kuva" id="kuva">
 -    <input type="button" value="Toggle tekst" id="toggle">
 -    <input type="button" value="Ava/sulge pilt" id="slaid">
-+    <input type="button" value="<---" id="vasakule" style="display: none" title="Viib kõik tagasi vasakule">
-+    <input type="button" value="--->" id="paremale" title="Liigutab pealkirja ja pildid paremale">
-+    <input type="button" value="Peida" id="peida" title="Peidab pildid ära, tagasi saab Kuva nupuga">
-+    <input type="button" value="Kuva" id="kuva" title="Näitab pildid uuesti">
-+    <input type="button" value="Toggle tekst" id="toggle" title="Peidab või näitab teksti">
-+    <input type="button" value="Ava/sulge pilt" id="slaid" title="Pilt sulgub ja avaneb nagu ruloo">
++    <input type="button" value="<---" id="vasakule" style="display: none" class="vihjemull" title="Viib kõik tagasi vasakule">
++    <input type="button" value="--->" id="paremale" class="vihjemull" title="Liigutab pealkirja ja pildid paremale">
++    <input type="button" value="Peida" id="peida" class="vihjemull" title="Peidab pildid ära, tagasi saab Kuva nupuga">
++    <input type="button" value="Kuva" id="kuva" class="vihjemull" title="Näitab pildid uuesti">
++    <input type="button" value="Toggle tekst" id="toggle" class="vihjemull" title="Peidab või näitab teksti">
++    <input type="button" value="Ava/sulge pilt" id="slaid" class="vihjemull" title="Pilt sulgub ja avaneb nagu ruloo">
      <div id="vastus"></div>
  
      <section id="Kast1">
-@@ -127,7 +142,7 @@
+@@ -127,7 +147,7 @@
      <section id = "Kast2">
          <h3>Põnev pilt</h3>
          <div id="pildiKast">
 -            <img src="Pildid/nimetu.png" alt="Põnev pilt" class="sisu pilt" draggable="false">
-+            <img src="Pildid/nimetu.png" alt="Põnev pilt" class="sisu pilt" draggable="false" title="Pilti saab hiirega lohistada, nuppude all on koordinaadid">
++            <img src="Pildid/nimetu.png" alt="Põnev pilt" class="vihjemull sisu pilt" draggable="false" title="Pilti saab hiirega lohistada, nuppude all on koordinaadid">
          </div>
      </section>
  
 --- a/Kujundus1/style.css
 +++ b/Kujundus1/style.css
-@@ -261,3 +261,15 @@
+@@ -261,3 +261,16 @@
      background-color: darkgreen;
      color: white;
  }
 +
 +/************ VIHJEMULLID *****************/
-+.vihje {
++#vihje {
 +    display: none;
 +    position: absolute;
++    z-index: 9999;
 +    max-width: 200px;
-+    padding: 5px 10px;
-+    background-color: darkgreen;
-+    color: white;
++    color: #fff;
 +    font-family: Verdana, sans-serif;
-+    font-size: 13px;
++    font-size: 12px;
++    background-color: darkgreen;
++    padding: 5px 25px;
 +}
