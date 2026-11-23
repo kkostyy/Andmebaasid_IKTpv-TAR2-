@@ -1,0 +1,121 @@
+diff --git a/Kujundus1/index.html b/Kujundus1/index.html
+index bcdeb03..f51481e 100644
+--- a/Kujundus1/index.html
++++ b/Kujundus1/index.html
+@@ -59,6 +59,32 @@
+                 $(this).css('color', 'black').fadeTo(300, 1);
+             });
+ 
++            // VIHJEMULLID: elemendid, millel on title atribuut
++            var $vihje = $('<div class="vihje"></div>').appendTo('body').hide();
++
++            $('#paremale, #vasakule, #peida, #kuva, #toggle, #slaid, nav a[title], #pildiKast img')
++                .on('mouseenter', function (e) {
++                    // tekst võetakse title'ist, et brauseri enda vihjet ei tuleks
++                    var tekst = $(this).attr('title');
++                    $(this).data('vihje', tekst).removeAttr('title');
++                    $vihje.text(tekst).stop(true, true).fadeIn(300);
++                    liigutaVihje(e);
++                })
++                .on('mousemove', liigutaVihje)
++                .on('mouseleave', function () {
++                    $(this).attr('title', $(this).data('vihje'));
++                    $vihje.stop(true, true).fadeOut(200);
++                })
++                .on('mousedown', function () {
++                    // lohistamise ajal vihje kaob
++                    $vihje.stop(true, true).fadeOut(100);
++                });
++
++            // vihjemull on hiirest 15px paremal ja 20px all
++            function liigutaVihje(e) {
++                $vihje.css({ left: e.pageX + 15, top: e.pageY + 20 });
++            }
++
+             $('.sisu').draggable();
+             $('.pilt').draggable({ drag: xyKoordinaat });
+         });
+@@ -84,16 +110,16 @@
+ <nav>
+     <ul>
+         <li>
+-            <a href="index.html">Kodu</a>
++            <a href="index.html" title="Avaleht – siin saad proovida jQuery efekte.">Kodu</a>
+         </li>
+         <li>
+-            <a href="tutvustus.html">Tutvustus</a>
++            <a href="tutvustus.html" title="Lühike tutvustus minust ja sellest veebilehest.">Tutvustus</a>
+         </li>
+         <li>
+-            <a href="lingid.html">Kasulikud lingid</a>
++            <a href="lingid.html" title="Validaatorid, Moodle ja w3schools – abiks veebilehe tegemisel.">Kasulikud lingid</a>
+         </li>
+         <li>
+-            <a href="meedia.html">Meedia</a>
++            <a href="meedia.html" title="Pildigalerii, video, kaart ja muusika.">Meedia</a>
+         </li>
+         <li class="ripp">
+             <a href="tood.html">Tehtud tööd</a>
+@@ -108,12 +134,12 @@
+ </nav>
+ <!--põhisisu-->
+ <main>
+-    <input type="button" value="<---" id="vasakule" style="display: none">
+-    <input type="button" value="--->" id="paremale">
+-    <input type="button" value="Peida" id="peida">
+-    <input type="button" value="Kuva" id="kuva">
+-    <input type="button" value="Toggle tekst" id="toggle">
+-    <input type="button" value="Ava/sulge pilt" id="slaid">
++    <input type="button" value="<---" id="vasakule" style="display: none" title="Toob pealkirja ja pildid animatsiooniga tagasi vasakule algasendisse.">
++    <input type="button" value="--->" id="paremale" title="Liigutab pealkirja ja pildid animatsiooniga 500px paremale.">
++    <input type="button" value="Peida" id="peida" title="Peidab päise pildi ja „Põnev pilt“ pildi. Tagasi saab nupuga „Kuva“.">
++    <input type="button" value="Kuva" id="kuva" title="Toob peidetud pildid uuesti nähtavale.">
++    <input type="button" value="Toggle tekst" id="toggle" title="Üks nupp kahe tegevusega: peidab või näitab „Tere tulemast!“ teksti.">
++    <input type="button" value="Ava/sulge pilt" id="slaid" title="Pildikast sulgub ja avaneb nagu ruloo (slideToggle).">
+     <div id="vastus"></div>
+ 
+     <section id="Kast1">
+@@ -127,7 +153,7 @@
+     <section id = "Kast2">
+         <h3>Põnev pilt</h3>
+         <div id="pildiKast">
+-            <img src="Pildid/nimetu.png" alt="Põnev pilt" class="sisu pilt" draggable="false">
++            <img src="Pildid/nimetu.png" alt="Põnev pilt" class="sisu pilt" draggable="false" title="Lohista pilti hiirega – nuppude all näed selle x- ja y-koordinaate.">
+         </div>
+     </section>
+ 
+diff --git a/Kujundus1/style.css b/Kujundus1/style.css
+index cc1cfdb..24a99fd 100644
+--- a/Kujundus1/style.css
++++ b/Kujundus1/style.css
+@@ -261,3 +261,30 @@ nav ul li a.hover {
+     background-color: darkgreen;
+     color: white;
+ }
++
++/************ VIHJEMULLID (tooltip) index.html lehel *****************/
++.vihje {
++    position: absolute;
++    z-index: 1000;
++    max-width: 250px;
++    padding: 8px 12px;
++    background-color: darkgreen;
++    color: white;
++    font-family: Verdana, sans-serif;
++    font-size: 13px;
++    line-height: 1.4;
++    border: 2px solid #a5d6a7;
++    border-radius: 6px;
++    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
++    pointer-events: none;      /* vihje ei sega hiirt */
++}
++/* väike nool vihjemulli ülaservas */
++.vihje::before {
++    content: "";
++    position: absolute;
++    top: -10px;
++    left: 10px;
++    border-width: 0 8px 8px 8px;
++    border-style: solid;
++    border-color: transparent transparent #a5d6a7 transparent;
++}

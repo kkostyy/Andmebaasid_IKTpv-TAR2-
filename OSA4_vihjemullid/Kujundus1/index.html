@@ -1,0 +1,179 @@
+<!DOCTYPE html> <!--deklareerimine HTML5 keel-->
+<html lang="et">
+<head>
+    <!--veebilehe tehniline info-->
+    <meta charset="UTF-8">
+    <title>Konstantin veebirakenduste aluste tööd</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!--jQuery ja jQuery UI-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // "Tehtud tööd" alammenüü: hover-efekt menüü linkidel
+            $('nav a').hover(function () {
+                $(this).addClass('hover');
+            }, function () {
+                $(this).removeClass('hover');
+            });
+
+            $('#kuva').hide();
+
+            $('#peida').on('click', function () {
+                $('.sisu').hide(500);
+                $(this).hide();
+                $('#kuva').show();
+            });
+
+            $('#kuva').on('click', function () {
+                $('.sisu').show(500);
+                $(this).hide();
+                $('#peida').show();
+            });
+
+            $('#paremale').on('click', function () {
+                $('.sisu, h2, .pilt').animate({ left: '500px' }, 1000);
+                $(this).hide();
+                $('#vasakule').show();
+            });
+
+            $('#vasakule').on('click', function () {
+                $('.sisu, h2, .pilt').animate({ left: '0px' }, 1000);
+                $(this).hide();
+                $('#paremale').show();
+            });
+
+            $('#toggle').on('click', function () {
+                $('#tekst').toggle(500);
+            });
+
+            $('#slaid').on('click', function () {
+                $('#pildiKast').slideToggle(800);
+            });
+
+            $('#Kast1 h2').on('mouseenter', function () {
+                $(this).css('color', 'darkgreen').fadeTo(300, 0.5);
+            }).on('mouseleave', function () {
+                $(this).css('color', 'black').fadeTo(300, 1);
+            });
+
+            // VIHJEMULLID: elemendid, millel on title atribuut
+            var $vihje = $('<div class="vihje"></div>').appendTo('body').hide();
+
+            $('#paremale, #vasakule, #peida, #kuva, #toggle, #slaid, nav a[title], #pildiKast img')
+                .on('mouseenter', function (e) {
+                    // tekst võetakse title'ist, et brauseri enda vihjet ei tuleks
+                    var tekst = $(this).attr('title');
+                    $(this).data('vihje', tekst).removeAttr('title');
+                    $vihje.text(tekst).stop(true, true).fadeIn(300);
+                    liigutaVihje(e);
+                })
+                .on('mousemove', liigutaVihje)
+                .on('mouseleave', function () {
+                    $(this).attr('title', $(this).data('vihje'));
+                    $vihje.stop(true, true).fadeOut(200);
+                })
+                .on('mousedown', function () {
+                    // lohistamise ajal vihje kaob
+                    $vihje.stop(true, true).fadeOut(100);
+                });
+
+            // vihjemull on hiirest 15px paremal ja 20px all
+            function liigutaVihje(e) {
+                $vihje.css({ left: e.pageX + 15, top: e.pageY + 20 });
+            }
+
+            $('.sisu').draggable();
+            $('.pilt').draggable({ drag: xyKoordinaat });
+        });
+
+        function xyKoordinaat(event, ui) {
+            $('#vastus').html(
+                'x: ' + Math.round(ui.offset.left) + ', y: ' + Math.round(ui.offset.top)
+            );
+        }
+    </script>
+</head>
+<body>
+<!--veebilehe sisu-->
+<header>
+    <!--päise pilt: Peida/Kuva peidab ja kuvab seda-->
+    <img src="Pildid/nimetu.png" alt="Päise pilt" class="sisu" draggable="false">
+    <!--pealkiri: saab lohistada ja liigutada nooltega-->
+    <h1 class="pilt">
+        Konstantin veebirakenduste aluste tööd
+    </h1>
+</header>
+
+<nav>
+    <ul>
+        <li>
+            <a href="index.html" title="Avaleht – siin saad proovida jQuery efekte.">Kodu</a>
+        </li>
+        <li>
+            <a href="tutvustus.html" title="Lühike tutvustus minust ja sellest veebilehest.">Tutvustus</a>
+        </li>
+        <li>
+            <a href="lingid.html" title="Validaatorid, Moodle ja w3schools – abiks veebilehe tegemisel.">Kasulikud lingid</a>
+        </li>
+        <li>
+            <a href="meedia.html" title="Pildigalerii, video, kaart ja muusika.">Meedia</a>
+        </li>
+        <li class="ripp">
+            <a href="tood.html">Tehtud tööd</a>
+            <!--alammenüü kolme parima tööga-->
+            <ul class="alammenyy">
+                <li><a href="Tood/Vormid/Maparea/maparea.html">Map area pilt</a></li>
+                <li><a href="Tood/Vormid/PiltideVahetus/piltideVahetus.html">Piltide vahetus</a></li>
+                <li><a href="Tood/Vormid/Kysimustik_jQuery/kysimustik.html">Muusika küsimustik (jQuery valideerimine)</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<!--põhisisu-->
+<main>
+    <input type="button" value="<---" id="vasakule" style="display: none" title="Toob pealkirja ja pildid animatsiooniga tagasi vasakule algasendisse.">
+    <input type="button" value="--->" id="paremale" title="Liigutab pealkirja ja pildid animatsiooniga 500px paremale.">
+    <input type="button" value="Peida" id="peida" title="Peidab päise pildi ja „Põnev pilt“ pildi. Tagasi saab nupuga „Kuva“.">
+    <input type="button" value="Kuva" id="kuva" title="Toob peidetud pildid uuesti nähtavale.">
+    <input type="button" value="Toggle tekst" id="toggle" title="Üks nupp kahe tegevusega: peidab või näitab „Tere tulemast!“ teksti.">
+    <input type="button" value="Ava/sulge pilt" id="slaid" title="Pildikast sulgub ja avaneb nagu ruloo (slideToggle).">
+    <div id="vastus"></div>
+
+    <section id="Kast1">
+        <h2>
+            Tere tulemast!
+        </h2>
+        <p id="tekst">See index leht mis on tehtus 1. Veebirakenduste tunnis!
+            Palun vajuta teise lingi peale ning kontrolli et sisu on täidetud
+        </p>
+    </section>
+    <section id = "Kast2">
+        <h3>Põnev pilt</h3>
+        <div id="pildiKast">
+            <img src="Pildid/nimetu.png" alt="Põnev pilt" class="sisu pilt" draggable="false" title="Lohista pilti hiirega – nuppude all näed selle x- ja y-koordinaate.">
+        </div>
+    </section>
+
+    <!--juhend kasutajale-->
+    <section id="Kast3">
+        <h3>Kuidas jQuery efektid töötavad?</h3>
+        <ul class="juhend">
+            <li><b>---&gt; / &lt;---</b> – liigutab pealkirju ja pilte paremale või tagasi vasakule.</li>
+            <li><b>Peida / Kuva</b> – peidab või näitab päise pilti ja „Põnev pilt“ pilti.</li>
+            <li><b>Toggle tekst</b> – üks nupp, mis peidab ja näitab teksti „Tere tulemast!“ all.</li>
+            <li><b>Ava/sulge pilt</b> – <i>uus efekt</i> (slideToggle): pildikast sulgub ja avaneb nagu ruloo.</li>
+            <li><b>Hiir „Tere tulemast!“ peale</b> – <i>uus efekt</i> (fadeTo + css): pealkiri muutub roheliseks ja poolläbipaistvaks.</li>
+            <li><b>Lohista hiirega</b> lehe pealkirja, päise pilti või „Põnev pilt“ – pilti lohistades näed nuppude all selle x- ja y-koordinaate.</li>
+        </ul>
+    </section>
+</main>
+<!--jalus-->
+<footer>
+    Konstantin leht &copy; 2026
+</footer>
+
+</body>
+</html>
