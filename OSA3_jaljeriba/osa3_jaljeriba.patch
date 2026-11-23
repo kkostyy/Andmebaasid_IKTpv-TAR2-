@@ -638,32 +638,6 @@ index 8866cee..729056b 100644
  <main>
      <input type="button" value="<---" id="vasakule" style="display: none">
      <input type="button" value="--->" id="paremale">
-diff --git a/Kujundus1/index.html b/Kujundus1/index.html
-index f136bcb..e165fc8 100644
---- a/Kujundus1/index.html
-+++ b/Kujundus1/index.html
-@@ -62,6 +62,8 @@
-             );
-         }
-     </script>
-+    <link rel="stylesheet" href="jaljeriba.css">
-+    <script src="jaljeriba.js" defer></script>
- </head>
- <body>
- <!--veebilehe sisu-->
-@@ -93,6 +95,12 @@
-         </li>
-     </ul>
- </nav>
-+<!--jäljeriba (breadcrumb) menüü-->
-+<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
-+<ul id="menyy">
-+    <li><span>Kodu</span></li>
-+</ul>
-+</div>
- <!--põhisisu-->
- <main>
-     <input type="button" value="<---" id="vasakule" style="display: none">
 diff --git a/Kujundus1/jaljeriba.css b/Kujundus1/jaljeriba.css
 new file mode 100644
 index 0000000..512a81e
@@ -968,68 +942,6 @@ index 0000000..ab0509a
 +        $vihje.stop(true, true).fadeOut(200);
 +    });
 +}
-diff --git a/Kujundus1/lingid.html b/Kujundus1/lingid.html
-index 7bebeb0..6478ca9 100644
---- a/Kujundus1/lingid.html
-+++ b/Kujundus1/lingid.html
-@@ -5,6 +5,9 @@
-   <meta charset="UTF-8">
-   <title>Konstantin veebirakenduste aluste tööd</title>
-   <link rel="stylesheet" href="style.css">
-+    <link rel="stylesheet" href="jaljeriba.css">
-+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-+    <script src="jaljeriba.js" defer></script>
- </head>
- <body>
- <!--veebilehe sisu-->
-@@ -33,6 +36,16 @@
-     </li>
-   </ul>
- </nav>
-+<!--jäljeriba (breadcrumb) menüü-->
-+<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
-+<ul id="menyy">
-+    <li><a href="index.html">Kodu</a>
-+        <ul>
-+            <li><span>Kasulikud lingid</span></li>
-+        </ul>
-+    </li>
-+</ul>
-+</div>
- <!--põhisisu-->
- <main>
-   <section id = "Kast5">
-diff --git a/Kujundus1/meedia.html b/Kujundus1/meedia.html
-index e9163f3..fa1af6b 100644
---- a/Kujundus1/meedia.html
-+++ b/Kujundus1/meedia.html
-@@ -6,6 +6,9 @@
-     <meta name="author" content="Konstantin">
-     <title>Meedia | Konstantin veebirakenduste aluste tööd</title>
-     <link rel="stylesheet" href="style.css">
-+    <link rel="stylesheet" href="jaljeriba.css">
-+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-+    <script src="jaljeriba.js" defer></script>
- </head>
- <body>
- <!--veebilehe sisu-->
-@@ -33,6 +36,16 @@
-      </li>
-  </ul>
- </nav>
-+<!--jäljeriba (breadcrumb) menüü-->
-+<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
-+<ul id="menyy">
-+    <li><a href="index.html">Kodu</a>
-+        <ul>
-+            <li><span>Meedia</span></li>
-+        </ul>
-+    </li>
-+</ul>
-+</div>
- <!--põhisisu-->
- <main>
-     <div id="suurkast">
 diff --git a/Kujundus1/tood.html b/Kujundus1/tood.html
 index 7301cb5..a68818e 100644
 --- a/Kujundus1/tood.html
@@ -1061,34 +973,3 @@ index 7301cb5..a68818e 100644
  <!--põhisisu-->
  <main>
      <section id="Kast7">
-diff --git a/Kujundus1/tutvustus.html b/Kujundus1/tutvustus.html
-index 304edc8..4e44d91 100644
---- a/Kujundus1/tutvustus.html
-+++ b/Kujundus1/tutvustus.html
-@@ -5,6 +5,9 @@
-   <meta charset="UTF-8">
-   <title>Konstantin veebirakenduste aluste tööd</title>
-   <link rel="stylesheet" href="style.css">
-+    <link rel="stylesheet" href="jaljeriba.css">
-+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-+    <script src="jaljeriba.js" defer></script>
- </head>
- <body>
- <!--veebilehe sisu-->
-@@ -33,6 +36,16 @@
-     </li>
-   </ul>
- </nav>
-+<!--jäljeriba (breadcrumb) menüü-->
-+<div class="jaljeriba" role="navigation" aria-label="Jäljeriba">
-+<ul id="menyy">
-+    <li><a href="index.html">Kodu</a>
-+        <ul>
-+            <li><span>Tutvustus</span></li>
-+        </ul>
-+    </li>
-+</ul>
-+</div>
- <!--põhisisu-->
- <main>
-   <section id = "Kast3">
