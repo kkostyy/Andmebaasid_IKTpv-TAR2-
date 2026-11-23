@@ -6,9 +6,17 @@
     <meta name="author" content="Konstantin">
     <title>Meedia | Konstantin veebirakenduste aluste tööd</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="rippmenyy.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="rippmenyy.js" defer></script>
+    <script>
+        $(document).ready(function () {
+            // "Tehtud tööd" alammenüü: hover-efekt menüü linkidel
+            $('nav a').hover(function () {
+                $(this).addClass('hover');
+            }, function () {
+                $(this).removeClass('hover');
+            });
+        });
+    </script>
 </head>
 <body>
 <!--veebilehe sisu-->

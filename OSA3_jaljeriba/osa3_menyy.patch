@@ -1,17 +1,22 @@
 diff --git a/Kujundus1/index.html b/Kujundus1/index.html
-index f136bcb..ccc7542 100644
+index f136bcb..bcdeb03 100644
 --- a/Kujundus1/index.html
 +++ b/Kujundus1/index.html
-@@ -62,6 +62,8 @@
-             );
-         }
-     </script>
-+    <link rel="stylesheet" href="rippmenyy.css">
-+    <script src="rippmenyy.js" defer></script>
- </head>
- <body>
- <!--veebilehe sisu-->
-@@ -85,12 +87,18 @@
+@@ -12,6 +12,13 @@
+ 
+     <script>
+         $(document).ready(function () {
++            // "Tehtud tööd" alammenüü: hover-efekt menüü linkidel
++            $('nav a').hover(function () {
++                $(this).addClass('hover');
++            }, function () {
++                $(this).removeClass('hover');
++            });
++
+             $('#kuva').hide();
+ 
+             $('#peida').on('click', function () {
+@@ -85,12 +92,18 @@
          <li>
              <a href="lingid.html">Kasulikud lingid</a>
          </li>
@@ -34,20 +39,28 @@ index f136bcb..ccc7542 100644
  </nav>
  <!--põhisisu-->
 diff --git a/Kujundus1/lingid.html b/Kujundus1/lingid.html
-index 7bebeb0..825b1b9 100644
+index 7bebeb0..b2f9273 100644
 --- a/Kujundus1/lingid.html
 +++ b/Kujundus1/lingid.html
-@@ -5,6 +5,9 @@
+@@ -5,6 +5,17 @@
    <meta charset="UTF-8">
    <title>Konstantin veebirakenduste aluste tööd</title>
    <link rel="stylesheet" href="style.css">
-+  <link rel="stylesheet" href="rippmenyy.css">
 +  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-+  <script src="rippmenyy.js" defer></script>
++  <script>
++      $(document).ready(function () {
++          // "Tehtud tööd" alammenüü: hover-efekt menüü linkidel
++          $('nav a').hover(function () {
++              $(this).addClass('hover');
++          }, function () {
++              $(this).removeClass('hover');
++          });
++      });
++  </script>
  </head>
  <body>
  <!--veebilehe sisu-->
-@@ -25,12 +28,18 @@
+@@ -25,12 +36,18 @@
      <li>
        <a href="lingid.html">Kasulikud lingid</a>
      </li>
@@ -70,20 +83,28 @@ index 7bebeb0..825b1b9 100644
  </nav>
  <!--põhisisu-->
 diff --git a/Kujundus1/meedia.html b/Kujundus1/meedia.html
-index e9163f3..f4a3d0e 100644
+index e9163f3..5a06f39 100644
 --- a/Kujundus1/meedia.html
 +++ b/Kujundus1/meedia.html
-@@ -6,6 +6,9 @@
+@@ -6,6 +6,17 @@
      <meta name="author" content="Konstantin">
      <title>Meedia | Konstantin veebirakenduste aluste tööd</title>
      <link rel="stylesheet" href="style.css">
-+    <link rel="stylesheet" href="rippmenyy.css">
 +    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-+    <script src="rippmenyy.js" defer></script>
++    <script>
++        $(document).ready(function () {
++            // "Tehtud tööd" alammenüü: hover-efekt menüü linkidel
++            $('nav a').hover(function () {
++                $(this).addClass('hover');
++            }, function () {
++                $(this).removeClass('hover');
++            });
++        });
++    </script>
  </head>
  <body>
  <!--veebilehe sisu-->
-@@ -25,12 +28,18 @@
+@@ -25,12 +36,18 @@
       <li>
           <a href="lingid.html">Kasulikud lingid</a>
       </li>
@@ -105,79 +126,63 @@ index e9163f3..f4a3d0e 100644
   </ul>
  </nav>
  <!--põhisisu-->
-diff --git a/Kujundus1/rippmenyy.css b/Kujundus1/rippmenyy.css
-new file mode 100644
-index 0000000..3f4fdc6
---- /dev/null
-+++ b/Kujundus1/rippmenyy.css
-@@ -0,0 +1,37 @@
-+/************ ALAMMENÜÜ "Tehtud tööd" (Metsheina hover-menüü näite järgi) *****************/
-+/* "Tehtud tööd" plokk on 200px lai, alammenüü on alati avatud */
-+nav ul li.ripp {
-+    width: 200px;
+diff --git a/Kujundus1/style.css b/Kujundus1/style.css
+index 44fe9fa..cc1cfdb 100644
+--- a/Kujundus1/style.css
++++ b/Kujundus1/style.css
+@@ -237,4 +237,27 @@ main{
+     .galerii {
+         grid-template-columns: repeat(2, 1fr);
+     }
+-}
+\ No newline at end of file
 +}
-+nav ul li.ripp > a {
-+    border-bottom: 1px solid #fff;
++/************ ALAMMENÜÜ "Tehtud tööd" (alati avatud) *****************/
++nav ul li.ripp {
++    min-width: 200px;
 +}
 +nav ul.alammenyy {
 +    display: block;
-+    list-style-type: none;
-+    width: 180px;
 +    margin: 0;
-+    padding: 0 0 0 20px;     /* alammenüü on veidi taandega */
-+    background: none;
++    padding: 0;
++    background-color: green;
 +    overflow: visible;
 +}
 +nav ul.alammenyy li {
-+    display: inline;
 +    float: none;
 +}
 +nav ul.alammenyy li a {
-+    display: block;
-+    border: none;
-+    border-bottom: 1px solid #fff;
-+    text-decoration: none;
-+    background: green;
-+    color: #fff;
-+    padding: 0.3em;
++    border-top: none;
 +    text-align: left;
 +}
 +/* jQuery hover() lisab selle klassi */
-+nav a.hover,
-+nav ul.alammenyy li a.hover {
-+    background: #3C9;
-+    font-weight: 700;
++nav ul li a.hover {
++    background-color: darkgreen;
++    color: white;
 +}
-diff --git a/Kujundus1/rippmenyy.js b/Kujundus1/rippmenyy.js
-new file mode 100644
-index 0000000..a1f105f
---- /dev/null
-+++ b/Kujundus1/rippmenyy.js
-@@ -0,0 +1,9 @@
-+// "Tehtud tööd" alammenüü hover-efekt jQuery abil (Metsheina näite järgi)
-+$(function () {
-+    $('nav a').hover(function (event) {
-+        $(this).addClass('hover');
-+    },
-+    function () {
-+        $(this).removeClass('hover');
-+    });
-+});
 diff --git a/Kujundus1/tood.html b/Kujundus1/tood.html
-index 7301cb5..1a00915 100644
+index 7301cb5..ddb22f5 100644
 --- a/Kujundus1/tood.html
 +++ b/Kujundus1/tood.html
-@@ -5,6 +5,9 @@
+@@ -5,6 +5,17 @@
      <meta charset="UTF-8">
      <title>Konstantin veebirakenduste aluste tööd</title>
      <link rel="stylesheet" href="style.css">
-+    <link rel="stylesheet" href="rippmenyy.css">
 +    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-+    <script src="rippmenyy.js" defer></script>
++    <script>
++        $(document).ready(function () {
++            // "Tehtud tööd" alammenüü: hover-efekt menüü linkidel
++            $('nav a').hover(function () {
++                $(this).addClass('hover');
++            }, function () {
++                $(this).removeClass('hover');
++            });
++        });
++    </script>
  </head>
  <body>
  <!--veebilehe sisu-->
-@@ -25,12 +28,18 @@
+@@ -25,12 +36,18 @@
          <li>
              <a href="lingid.html">Kasulikud lingid</a>
          </li>
@@ -200,20 +205,28 @@ index 7301cb5..1a00915 100644
  </nav>
  <!--põhisisu-->
 diff --git a/Kujundus1/tutvustus.html b/Kujundus1/tutvustus.html
-index 304edc8..f72bd3c 100644
+index 304edc8..d86335f 100644
 --- a/Kujundus1/tutvustus.html
 +++ b/Kujundus1/tutvustus.html
-@@ -5,6 +5,9 @@
+@@ -5,6 +5,17 @@
    <meta charset="UTF-8">
    <title>Konstantin veebirakenduste aluste tööd</title>
    <link rel="stylesheet" href="style.css">
-+  <link rel="stylesheet" href="rippmenyy.css">
 +  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-+  <script src="rippmenyy.js" defer></script>
++  <script>
++      $(document).ready(function () {
++          // "Tehtud tööd" alammenüü: hover-efekt menüü linkidel
++          $('nav a').hover(function () {
++              $(this).addClass('hover');
++          }, function () {
++              $(this).removeClass('hover');
++          });
++      });
++  </script>
  </head>
  <body>
  <!--veebilehe sisu-->
-@@ -25,12 +28,18 @@
+@@ -25,12 +36,18 @@
      <li>
        <a href="lingid.html">Kasulikud lingid</a>
      </li>

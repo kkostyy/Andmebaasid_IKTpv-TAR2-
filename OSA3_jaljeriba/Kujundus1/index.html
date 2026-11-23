@@ -12,6 +12,13 @@
 
     <script>
         $(document).ready(function () {
+            // "Tehtud tööd" alammenüü: hover-efekt menüü linkidel
+            $('nav a').hover(function () {
+                $(this).addClass('hover');
+            }, function () {
+                $(this).removeClass('hover');
+            });
+
             $('#kuva').hide();
 
             $('#peida').on('click', function () {
@@ -62,8 +69,6 @@
             );
         }
     </script>
-    <link rel="stylesheet" href="rippmenyy.css">
-    <script src="rippmenyy.js" defer></script>
 </head>
 <body>
 <!--veebilehe sisu-->
