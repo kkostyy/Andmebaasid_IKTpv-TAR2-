@@ -59,31 +59,20 @@
                 $(this).css('color', 'black').fadeTo(300, 1);
             });
 
-            // VIHJEMULLID: elemendid, millel on title atribuut
-            var $vihje = $('<div class="vihje"></div>').appendTo('body').hide();
-
-            $('#paremale, #vasakule, #peida, #kuva, #toggle, #slaid, nav a[title], #pildiKast img')
-                .on('mouseenter', function (e) {
-                    // tekst võetakse title'ist, et brauseri enda vihjet ei tuleks
-                    var tekst = $(this).attr('title');
-                    $(this).data('vihje', tekst).removeAttr('title');
-                    $vihje.text(tekst).stop(true, true).fadeIn(300);
-                    liigutaVihje(e);
-                })
-                .on('mousemove', liigutaVihje)
-                .on('mouseleave', function () {
-                    $(this).attr('title', $(this).data('vihje'));
-                    $vihje.stop(true, true).fadeOut(200);
-                })
-                .on('mousedown', function () {
-                    // lohistamise ajal vihje kaob
-                    $vihje.stop(true, true).fadeOut(100);
+            // vihjemullid
+            $('[title]').hover(function (e) {
+                var tekst = $(this).attr('title');
+                $(this).data('tekst', tekst).removeAttr('title');
+                $('<div class="vihje"></div>').text(tekst).appendTo('body')
+                    .css({ left: e.pageX + 10, top: e.pageY + 15 }).fadeIn(300);
+            }, function () {
+                $(this).attr('title', $(this).data('tekst'));
+                $('.vihje').fadeOut(200, function () {
+                    $(this).remove();
                 });
-
-            // vihjemull on hiirest 15px paremal ja 20px all
-            function liigutaVihje(e) {
-                $vihje.css({ left: e.pageX + 15, top: e.pageY + 20 });
-            }
+            }).mousemove(function (e) {
+                $('.vihje').css({ left: e.pageX + 10, top: e.pageY + 15 });
+            });
 
             $('.sisu').draggable();
             $('.pilt').draggable({ drag: xyKoordinaat });
@@ -110,16 +99,16 @@
 <nav>
     <ul>
         <li>
-            <a href="index.html" title="Sa oled juba siin 😄 Mängi nuppudega!">Kodu</a>
+            <a href="index.html" title="Avaleht, sa oled praegu siin">Kodu</a>
         </li>
         <li>
-            <a href="tutvustus.html" title="Natuke minust ja sellest lehest.">Tutvustus</a>
+            <a href="tutvustus.html" title="Natuke minust">Tutvustus</a>
         </li>
         <li>
-            <a href="lingid.html" title="Lingid, mis päästavad, kui kood ei tööta.">Kasulikud lingid</a>
+            <a href="lingid.html" title="Lingid mis aitavad kodulehte teha">Kasulikud lingid</a>
         </li>
         <li>
-            <a href="meedia.html" title="Pildid, video, kaart ja hea muusika – vaata sisse!">Meedia</a>
+            <a href="meedia.html" title="Pildid, video, kaart ja muusika">Meedia</a>
         </li>
         <li class="ripp">
             <a href="tood.html">Tehtud tööd</a>
@@ -134,12 +123,12 @@
 </nav>
 <!--põhisisu-->
 <main>
-    <input type="button" value="<---" id="vasakule" style="display: none" title="Okei, aitab sõidust – kõik sõidab tagasi oma kohale 🙂">
-    <input type="button" value="--->" id="paremale" title="Vajuta ja vaata, kuidas pealkiri ja pildid paremale minema sõidavad!">
-    <input type="button" value="Peida" id="peida" title="Pildid peitu! Ära muretse, „Kuva“ toob nad tagasi.">
-    <input type="button" value="Kuva" id="kuva" title="Igatsed piltide järele? Klõpsa ja nad on tagasi.">
-    <input type="button" value="Toggle tekst" id="toggle" title="Klõps – tekst kadus, uus klõps – tekst jälle siin.">
-    <input type="button" value="Ava/sulge pilt" id="slaid" title="Pilt kerib end kokku nagu ruloo. Proovi mitu korda järjest!">
+    <input type="button" value="<---" id="vasakule" style="display: none" title="Viib kõik tagasi vasakule">
+    <input type="button" value="--->" id="paremale" title="Liigutab pealkirja ja pildid paremale">
+    <input type="button" value="Peida" id="peida" title="Peidab pildid ära, tagasi saab Kuva nupuga">
+    <input type="button" value="Kuva" id="kuva" title="Näitab pildid uuesti">
+    <input type="button" value="Toggle tekst" id="toggle" title="Peidab või näitab teksti">
+    <input type="button" value="Ava/sulge pilt" id="slaid" title="Pilt sulgub ja avaneb nagu ruloo">
     <div id="vastus"></div>
 
     <section id="Kast1">
@@ -153,7 +142,7 @@
     <section id = "Kast2">
         <h3>Põnev pilt</h3>
         <div id="pildiKast">
-            <img src="Pildid/nimetu.png" alt="Põnev pilt" class="sisu pilt" draggable="false" title="Haara hiirega ja lohista! Nuppude all näed, kus pilt parasjagu on (x ja y).">
+            <img src="Pildid/nimetu.png" alt="Põnev pilt" class="sisu pilt" draggable="false" title="Pilti saab hiirega lohistada, nuppude all on koordinaadid">
         </div>
     </section>
 

@@ -262,29 +262,15 @@ nav ul li a.hover {
     color: white;
 }
 
-/************ VIHJEMULLID (tooltip) index.html lehel *****************/
+/************ VIHJEMULLID *****************/
 .vihje {
+    display: none;
     position: absolute;
-    z-index: 1000;
-    max-width: 250px;
-    padding: 8px 12px;
+    max-width: 200px;
+    padding: 5px 10px;
     background-color: darkgreen;
     color: white;
     font-family: Verdana, sans-serif;
     font-size: 13px;
-    line-height: 1.4;
-    border: 2px solid #a5d6a7;
-    border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    pointer-events: none;      /* vihje ei sega hiirt */
-}
-/* väike nool vihjemulli ülaservas */
-.vihje::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: 10px;
-    border-width: 0 8px 8px 8px;
-    border-style: solid;
-    border-color: transparent transparent #a5d6a7 transparent;
+    border-radius: 5px;
 }
